@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 1,100; 1,200; 1,300; 1,400; 1.500; 1.600 & display = swap ');
+
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap");
+
+
+
+*{
+  transition: 0.2s;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color:  #f0f4ff; 
+}
+
+
+/*----------- HEADER -----------------*/
+.container{
+  width: 100%;
+  height: 13vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.container header{
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #1616161f;
+}
+
+.container header .logo{
+  width: 50%;
+}
+
+.container header .logo img{
+  width: 30px;
+}
+
+.container header .itens{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: center;
+}
+
+.container header .itens ul{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container header .itens ul li{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.container header .itens ul li a{
+  display: flex;
+  text-decoration: none;
+  padding: 15px;
+
+  font-size: 15px;
+  font-weight: 400;
+  color: #161616;
+}
+
+.container header .itens ul li a:hover{
+  color: #407cee;
+  transition: 0.2s;
+}
+
+.container header .itens ul li .empresa{
+  display: flex;
+  text-decoration: none;
+  padding: 10px;
+
+  font-size: 15px;
+  font-weight: 400;
+  color: #161616;
+
+  border-radius: 2px;
+  border: 1px #407cee solid;
+  
+}
+
+.container header .itens ul li .empresa:hover{
+  color: #fff;
+  background-color: #407cee;
+  transition: 0.2s;
+}
+/* ------------------- */
+
+
+.container-two{
+    display: flex;
+
+    width: 100%;
+    height: 35vw;
+
+    justify-content: center;
+
+   background-color: #fff;
+   padding-top: 25px;
+}
+
+.main-two{
+    display: flex;
+    width: 1200px;
+
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.left{
+  width: 45%;
+  display: flex;
+  padding: 32px;
+  padding-top: 18px;
+}
+
+.left-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.left-text h3{
+  font-size: 30px;
+  color: #161616;
+  font-weight: 500;
+}
+
+.left-text p{ 
+  font-size: 22px;
+  color: #161616;
+  font-weight: 400;
+}
+
+.left-text button{
+  width: 160px;
+  height: 40px;
+
+  font-size: 16px;
+
+  color: #fff;
+  background-color: #407cee;
+  border: none;
+
+  box-shadow: 0rem 0rem 2rem #407dee3f;
+}
+
+.left-text button:hover{
+  background-color: #305cad;
+}
+
+.right{
+  width: 60%;
+  display: flex;
+}
+
+.right .right-img{
+  width: 100%;
+  overflow: hidden;
+}
+
+.right-img img{
+  width: 520px;
+}
+
+
+
+
+
+/*-----------------*/
+
+.container-tree{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #fff;
+}
+
+.container-tree svg{
+  margin-top: -100px;
+}
+
+.main-tree{
+    display: flex;
+    width: 100%;
+
+    background-color: #305cad;
+    height: 65vh;
+    justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+
+  width: 1200px;
+  justify-content: space-around;
+
+}
+
+.cards .card{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+
+  padding: 30px;
+
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 50vh;
+
+  border-radius: 2px;
+  box-shadow: 0rem 0rem 2rem #19305c77;
+}
+
+.cards .card p{
+  text-align: center;
+}
+
+.cards .card img{
+  width: 200px;
+}
+
+
+
+.container-four{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fcfcfc;
+    /*background: linear-gradient(90deg, rgba(84,37,170,1) 45%, rgba(11,55,213,1) 100%);
+    box-shadow: 0rem -1rem 1rem #5425aa5d;*/
+
+}
+
+footer{
+    display: flex;
+    width: 1050px;
+    height: 40vh;
+    margin-top: 82px;
+    flex-direction: column;
+    
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer p{
+    color: #000;
+    font-weight: 500;
+}
+
+footer a:hover{
+    font-weight: 700;
+    color: #305cad;
+}
+
+.footer-part1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu, .contato{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.redes{
+    width: 20%;
+}
+
+.redes img{
+    width: 52px;
+}
+
+.footer-part2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    width: 100%;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5423b5;
+  background-image: linear-gradient(43deg, #5423b5 32%, #5b1ebf 38%, #3318e0 100%);
+  ;
+}
+
+/* ----------- MEDIA QUERIES ---------*/
+@media (max-width: 1200px){
+
+  .container header{
+    width: 90vw;
+  }
+
+  .container header .logo img{
+    width: 30px;
+  }
+
+  .main-two{
+    width: 1200px;
+    height: 60vh;
+  }
+
+  .left{
+    width: 50%;
+  }
+
+  .container-tree svg{
+    margin-top: 15vw;
+  }
+
+  .cards .card{
+    width: 20%;
+    height: 40vh;
+  }
+
+  .cards .card img{
+    width: 130px;
+  }
+
+  .cards .card h3{
+    font-size: 17px;
+  }
+
+  .cards .card p{
+    font-size: 16px;
+  }
+
+  .right-img img{
+    width: 100%;
+  }
+
+  .container-four footer{
+    width: 80vw;
+  }
+
+.footer-part1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu, .contato{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.redes{
+    width: 20%;
+}
+
+.redes img{
+    width: 26px;
+}
+
+.cop{
+  font-size: 15px;
+  padding: 5px;
+}
+
+}
+
+@media (max-width: 900px){
+
+  .container header{
+    width: 85vw;
+  }
+
+  .container header .logo img{
+    width: 28px;
+  }
+
+  .container header .itens ul li a{
+    font-size: 14px;
+  }
+
+  .container header .itens ul li .empresa{
+    font-size: 14px;
+  }
+
+  .main-two{
+    width: 900px;
+  }
+
+  .left{
+    width: 75%;
+  }
+
+  .left-text h3{
+    font-size: 30px;
+  }
+
+  .left-text p{
+    font-size: 25px;
+  }
+
+  .left-text button{
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .container-tree svg{
+    margin-top: 20vw;
+  }
+
+  .right-img{
+    display: none;
+  }
+
+  .main-two{
+    height: 50vh;
+  }
+
+  .main-tree{
+    height: 170vh;
+  }
+
+  .cards{
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards .card{
+    width: 50%;
+    height: 40vh;
+  }
+
+  .cards .card img{
+    width: 130px;
+  }
+
+  .cards .card h3{
+    font-size: 17px;
+  }
+
+  .cards .card p{
+    font-size: 16px;
+  }
+
+  .container-four footer{
+    width: 80vw;
+  }
+
+footer a{
+    font-size: 15px;
+}
+
+footer p{
+    font-size: 18px;
+}
+
+.footer-part1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu, .contato{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.redes{
+    width: 20%;
+}
+
+.redes img{
+    width: 26px;
+}
+
+.cop{
+  font-size: 15px;
+  padding: 5px;
+}
+
+}
+
+@media (max-width: 600px){
+
+  .container header{
+    width: 80vw;
+  }
+
+  .container header .logo img{
+    width: 25px;
+  }
+
+  .container header .itens ul li a{
+    font-size: 14px;
+  }
+
+  .container header .itens ul li .empresa{
+    font-size: 14px;
+  }
+
+  .main-two{
+    width: 600px;
+  }
+
+  .left{
+    width: 75%;
+  }
+
+  .left-text h3{
+    font-size: 26px;
+  }
+
+  .left-text p{
+    font-size: 20px;
+  }
+
+  .left-text button{
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .container-tree svg{
+    margin-top: 35vw;
+  }
+
+  .right-img{
+    display: none;
+  }
+
+  .main-two{
+    height: 50vh;
+  }
+
+  .main-tree{
+    height: 150vh;
+  }
+
+  .cards{
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards .card{
+    width: 50%;
+    height: 40vh;
+  }
+
+  .cards .card img{
+    width: 130px;
+  }
+
+  .cards .card h3{
+    font-size: 17px;
+  }
+
+  .cards .card p{
+    font-size: 16px;
+  }
+
+  .container-four footer{
+    width: 80vw;
+  }
+
+footer a{
+    font-size: 12px;
+}
+
+footer p{
+    font-size: 13px;
+}
+
+.footer-part1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu, .contato{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.redes{
+    width: 20%;
+}
+
+.redes img{
+    width: 20px;
+}
+
+.cop{
+  font-size: 13px;
+  padding: 5px;
+}
+
+}
+
+@media (max-width: 375px){
+
+  .container header{
+    width: 80vw;
+  }
+
+  .container header .logo img{
+    width: 20px;
+  }
+
+  .container header .itens ul li a{
+    font-size: 14px;
+  }
+
+  .container header .itens ul li .empresa{
+    font-size: 14px;
+  }
+
+  .main-two{
+    width: 375px;
+  }
+
+  .left{
+    width: 75%;
+  }
+
+  .left-text h3{
+    font-size: 22px;
+  }
+
+  .left-text p{
+    font-size: 18px;
+  }
+
+  .left-text button{
+    width: 75px;
+    height: 33px;
+    font-size: 14px;
+  }
+
+  .container-tree svg{
+    margin-top: 50vw;
+  }
+
+  .right-img{
+    display: none;
+  }
+
+  .main-two{
+    height: 50vh;
+  }
+
+  .main-tree{
+    height: 130vh;
+  }
+
+  .cards{
+    width: 450px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards .card{
+    width: 45%;
+    height: 30vh;
+  }
+
+  .cards .card img{
+    width: 100px;
+  }
+
+  .cards .card h3{
+    font-size: 15px;
+  }
+
+  .cards .card p{
+    font-size: 14px;
+  }
+
+  .container-four footer{
+    width: 375px;
+  }
+
+footer a{
+    font-size: 12px;
+}
+
+footer p{
+    font-size: 13px;
+}
+
+.footer-part1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu, .contato{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.redes{
+    width: 20%;
+}
+
+.redes img{
+    width: 20px;
+}
+
+.cop{
+  font-size: 10px;
+  padding: 5px;
+}
+
+}

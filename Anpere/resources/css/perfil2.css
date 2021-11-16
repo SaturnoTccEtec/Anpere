@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+.banner {
+    height: 150px;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+}
+
+ .card {
+    border-color: #d7dfe3;
+    border-radius: 4px;
+    height: 400px;
+}
+
+.pro-img {
+    margin-top: -80px;
+    margin-bottom: 20px;
+}
+
+.little-profile .pro-img img {
+    width: 128px;
+    height: 128px;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 100%
+}
+
+
+h3 {
+    line-height: 30px;
+    font-size: 21px
+}
+
+.btn-rounded.btn-md {
+    padding: 12px 35px;
+    font-size: 16px
+}
+
+
+.btn-primary,
+.btn-primary.disabled {
+    
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    border: none;
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in
+}
+
+.btn-rounded {
+    border-radius: 60px;
+    padding: 7px 18px
+}
+
+.m-t-20 {
+    margin-top: 20px
+}
+
+.text-center {
+    text-align: center !important
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #455a64;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.conteudo{
+}
+
+.conteudo2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: 1px solid #d7dfe3;
+}
+
+.principal{
+    margin-top: 20px;
+    border-bottom: 1px solid #d7dfe3;
+}
+
+
+.nome{
+    margin-top: 15px;
+}
+
+.nome h5{
+    font-size: 18px;
+}
+
+.conteudo3 textarea{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 50px;
+    height: 150px;
+    width: 700px;
+    border: none;
+    resize: none;
+    background-color: rgb(230, 230, 230);
+    font-size: 15px;
+}
+
+.conteudo3 textarea:focus{
+    outline: none;
+}
+
+.conteudo3 h5{
+    margin-left: 50px;
+}
+
+.principal{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.conteudo3 p{
+    max-width: 700px;
+    margin-left: 50px;
+    color: rgb(37, 37, 37);
+}
+
+.conteudo4{
+    width: 300px;
+}
+.infooter{
+    margin-left: 70px;
+}
+
+.infooter img{
+    width: 30px;
+}
+
+.infooter button{
+
+    width: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    margin-left: 520px;
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+
+}
+
+.conteudo3 textarea:focus{
+    outline: none;
+}
+
+.LadoEsquerdo{
+    border-top-right-radius: 8px;
+}
+
+
+.banner2{
+    height: 20px;
+    background-color: #3318e0;
+}
+
+
+/*Lado direito*/
+
+.biografia {
+	padding: 50px;
+	width: 100%;
+	max-width: 680px;
+	line-height: 1.4;
+}
+
+.endereco {
+	padding: 50px;
+	width: 100%;
+	max-width: 680px;
+	line-height: 1.4;
+}
+
+.LadoEsquerdo button{
+    width: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+}
+
+
+
+  
+  .our-team {
+    padding: 30px 0 40px;
+    margin-bottom: 30px;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 85px;
+    cursor:pointer;
+  }
+  
+  .our-team .picture {
+    display: inline-block;
+    height: 130px;
+    width: 130px;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .our-team .picture::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    background-color: #1369ce;
+    position: absolute;
+    bottom: 135%;
+    right: 0;
+    left: 0;
+    opacity: 0.9;
+    transform: scale(3);
+    transition: all 0.3s linear 0s;
+  }
+  
+  .our-team:hover .picture::before {
+    height: 100%;
+  }
+  
+  .our-team .picture::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #1369ce;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .our-team .picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.9s ease 0s;
+  }
+  
+  .our-team:hover .picture img {
+    box-shadow: 0 0 0 14px #f7f5ec;
+    transform: scale(0.7);
+  }
+  
+  .our-team .title {
+    display: block;
+    font-size: 15px;
+    color: #4e5052;
+    text-transform: capitalize;
+  }
+  
+  .our-team .social {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #1369ce;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+  
+  .our-team:hover .social {
+    bottom: 0;
+  }
+  
+  .our-team .social li {
+    display: inline-block;
+  }
+  
+  .our-team .social li a {
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+  
+  .our-team .social li a:hover {
+    color: #1369ce;
+    background-color: #f7f5ec;
+  }
+  
+
+  /*pub*/
+  @import "bourbon";
+  .conteudo-pub img {
+      width: 100%;
+      height: 150px;
+      vertical-align: bottom;
+  }
+
+  .conteudo-pub{
+      padding-top: 30px;
+      background-color: white;
+  }
+  
+  .recipe-card {
+      
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      background: #fff;
+      width: 250px;
+      max-width: 496px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin-left: 50px;
+      margin-top: 50px;
+}
+
+  
+          .recipe-card aside img {
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+          }
+
+          a{
+              text-decoration: none;
+          }
+  
+          .button {
+              background: white;
+              color: green;
+              border-radius: 1.5px;
+              outline: none;
+              top: 80px;
+              width: 200px;
+              font-size: 25px;}
+      article {
+          padding: 1.25em 1.5em;}
+  
+          article ul {
+              list-style: none;
+              margin: 0.5em 0 0;
+              padding: 0;}
+             article ul li {
+                  display: inline-block;
+                  margin-left: 1em;
+                  line-height: 1em;}
+
+                  .icon {
+                      vertical-align: bottom;
+                  }
+  
+                  span:nth-of-type(2) {
+                      margin-left: 0.5em;
+                      font-size: 0.8em;
+                      font-weight: 300;
+                      vertical-align: middle;
+                      color: #838689;
+                  }
+  
+          h2, h3 {
+              margin: 0;
+              font-weight: 300;
+          }
+  
+          h2 {
+              font-size: em(28);
+              color: #222222;
+          }
+  
+          h3 {
+              font-size: em(15);
+              color: #838689;
+          }
+  
+          p {
+              margin: 1.25em 0;
+              font-size: em(13);
+              font-weight: 400;
+              color: #222222;}
+  
+              p span {
+                  font-weight: 700;
+                  color: #000000;
+              }
+  
+          .ingredients {
+              margin: 2em 0 0.5em;
+          }
+  
+      .icon {
+          display: inline;
+          display: inline-block;
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/recipe-card-icons.svg);
+          background-repeat: no-repeat;
+      }
+  
+      .icon-calories,.icon-calories\:regular {
+          background-position: 0 0;
+          width: 16px;
+          height: 19px;
+      }
+  
+      .icon-clock,.icon-clock\:regular {
+          background-position: 0 -19px;
+          width: 20px;
+          height: 20px;
+      }
+  
+      .icon-level,.icon-level\:regular {
+          background-position: 0 -39px;
+          width: 16px;
+          height: 19px;
+      }
+  
+      .icon-play,.icon-play\:regular {
+          background-position: 0 -58px;
+          width: 21px;
+          height: 26px;
+      }
+  
+      .icon-users,.icon-users\:regular {
+          background-position: 0 -84px;
+          width: 18px;
+          height: 18px;
+      }
+
+
+
+
+
+
+  /*stars*/ 
+
+  .rating {
+      width: 226px;
+      font-size: 25px;
+      overflow:hidden;
+  }
+.rating input {
+float: right;
+opacity: 0;
+position: absolute;
+}
+  .rating a,
+.rating label {
+      float:right;
+      color: #aaa;
+      text-decoration: none;
+      -webkit-transition: color .4s;
+      -moz-transition: color .4s;
+      -o-transition: color .4s;
+      transition: color .4s;
+  }
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+  .rating a:hover,
+  .rating a:hover ~ a,
+  .rating a:focus,
+  .rating a:focus ~ a		{
+      color: orange;
+      cursor: pointer;
+      text-decoration: none;
+  }
+  .rating2 {
+      direction: rtl;
+  }
+  .rating2 a {
+      float:none
+  }
+
+  .barraInformativa{
+      margin-top: 100px;
+      display: grid;
+      width: 1242px;
+      height:92px;
+      background-color: white;
+      margin-left: 50px;
+      grid-template-columns: 20% 55% 25%;
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .barraInformativa .parte1{
+      margin-top: 5px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+      border-left: 3px solid #3318e0;
+  }
+
+
+  .barraInformativa .parte1 .empresa{
+      font-family: 'Open Sans',sans-serif;
+      margin-top: 15px;
+      margin-left: 50px;
+      font-weight: bold;
+  }
+
+  .barraInformativa .parte1 .setor{
+      font-size: 15px;
+      font-family: 'Open Sans',sans-serif;
+      margin-left: 50px;
+      margin-top: -10px;
+  }
+
+  .barraInformativa .parte1 i{
+      float: left;
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+
+  .barraInformativa .parte2{
+      border-left:  1px solid rgba(0, 0, 0, 0.2);
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .barraInformativa .parte2 .pesquisar{
+      font-family: 'Open Sans',sans-serif;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-left: 50px;
+  }
+
+  .barraInformativa .parte2 input{
+      border: none;
+      width: 520px;
+      font-family: 'Open Sans',sans-serif;
+      font-size: 14px;
+      margin-left: 5px;
+  }
+
+  .barraInformativa .parte2 i{
+      color: #1369ce;
+      margin-top: 5px;
+  }
+
+  .barraInformativa .parte2 input:focus{
+      outline: none;
+  }
+
+  .barraInformativa .parte2 .barraPesquisa{
+      border: 1px solid rgb(197, 197, 197);
+      margin-left: 50px;
+      margin-top: -8px;
+      width: 560px;
+      height: 30px;
+  }
+
+  .barraInformativa .parte3{
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .barraInformativa .parte3 .parceria{
+      font-family: 'Open Sans',sans-serif;
+      font-weight: bold;
+      margin-left: 70px;
+      font-size: 16px;
+      margin-top: 22px;
+  }
+
+  .barraInformativa .parte3 .parceria2{
+      font-size: 15px;
+      margin-left: 70px;
+      font-family: 'Open Sans',sans-serif;
+      margin-top: -10px;
+  }
+
+  .barraInformativa .parte3 a:hover{
+      border: none;
+      text-decoration: none;
+  }
+
+  .barraInformativa .parte3 i{
+      float: left;
+      font-size: 20px;
+      margin-top: 25px;
+      margin-left: 30px;
+  }
+
+  .barraInformativa .parte4 .adicionar{
+      font-family: 'Open Sans',sans-serif;
+      font-weight: bold;
+      margin-left: 30px;
+      margin-top: 20px;
+
+  }
+
+  .barraInformativa .parte4 i{
+      font-size: 30px;
+      color: #1369ce;
+      margin-left: 45px;
+      margin-top: -10px;
+  }
+
+  .barraInformativa .parte4 i:hover{
+      font-size: 33px;
+  }
+
+  .barraInformativa .parte4 button{
+      border: none;
+      width: 10px;
+      height: 0px;
+      margin-top: -20px;
+      background-color: green;
+      cursor: pointer;
+      border-radius: 1.5px;
+      outline: none;
+  }
+
+  .barraInformativa .parte4 button:focus{
+      outline: none;
+  }
+
+  .titulo{
+      display: grid;
+      grid-template-columns: 25% 7%;
+  }
+
+  .titulo .tituloPrincipal{
+      font-size: 30px;
+      font-family:'Open Sans',sans-serif;
+      color: rgb(95, 95, 95);
+      margin-left: 50px;
+      margin-top: 90px;
+  }
+
+  .titulo .subtitulo{
+      margin-top: 105px;
+      color: #3318e0;
+      text-decoration: none;
+  }
+
+  .titulo a:hover{
+      text-decoration: none;
+  }
+
+  .cards{
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .conteudo-confira{
+      margin-top: 30px;
+      margin-left: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .conteudo-confira .card-confira{
+      display: grid;
+      width: 590px;
+      height: 200px;
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      grid-template-columns: 50% 50%;
+  }
+
+  .conteudo-confira .card-confira:hover{
+      
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .conteudo-confira .LadoEsquerdo .card-confira img{
+      width: 300px;
+  }
+
+  .conteudo-confira .LadoDireito .card-confira img{
+      width: 200px;
+      margin-left: 50px;
+  }
+
+
+  .conteudo-confira .tt{
+      font-family: 'Open Sans',sans-serif;
+      font-size: 25px;
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+
+  .conteudo-confira .ttzinho{
+      font-family: 'Open Sans',sans-serif;
+      font-size: 18px;
+      margin-left: 20px;
+  }
+
+  .conteudo-confira i{
+      font-size: 30px;
+      margin-left: 20px;
+      color: #3318e0;
+  }
+
+  .conteudo-confira button{
+      margin-left: 20px;
+      cursor: pointer;
+      border-radius: 1.5px;
+      outline: none;
+  }
+
+
+
+
+  .teste{
+      position: absolute;
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    background: #fff;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: px;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    ;
+  }
+
+  
+  .popup{
+    z-index: 1;
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    margin-left: 30%;
+    position: fixed;
+    margin-top: 5%;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    visibility: hidden;
+}
+
+.popup textarea{
+    padding: 10px;
+    height: 170px;
+    width: 410px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 40px;
+    border-radius: 8px;
+    font-family: 'Open Sans',sans-serif;
+    resize: none;
+    background-color: #e7ecf1;
+}
+
+.popup textarea:focus{
+    outline: none;
+}
+
+
+.popup .buttons{
+
+  margin-left: 40px;
+  margin-top: 20px;
+
+}
+
+.popup .buttons button:focus{
+    outline: none;
+}
+.popup .enviar{
+  color: white;
+  height: 40px;
+  font-family: 'Open Sans',sans-serif;
+  border: none;
+  background-color: #5423b5;
+  background-image: linear-gradient(43deg, #5423b5 32%, #5b1ebf 38%, #3318e0 100%);
+  width: 150px;
+  border-radius: 10px;
+}
+
+.popup .cancelar{
+  border: 1px solid rgb(151, 151, 151);
+  color: black;
+  height: 40px;
+  font-family: 'Open Sans',sans-serif;
+  width: 150px;
+  border-radius: 10px;
+  margin-left: 105px;
+
+}
+
+.popup .tituloPopup{
+  font-family: 'Open Sans',sans-serif;
+  font-size: 18px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.popup .subtituloPopup{
+  font-family: 'Open Sans',sans-serif;
+  font-size: 15px;
+  margin-left: 40px;
+  width: 410px;
+  margin-top: 5px;
+  color: rgb(88, 88, 88);
+}
+

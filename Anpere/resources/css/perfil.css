@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 1,100; 1,200; 1,300; 1,400; 1.500; 1.600 & display = swap ');
+
+*{
+    transition: 0.2s all;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4ff;
+}
+
+
+/*----------- HEADER -----------------*/
+.container{
+    width: 100%;
+    height: 12vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container header{
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container header .logo{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container header .logo .image{
+    width: 32px;
+}
+
+.container header .logo img{
+    width: 30px;
+}
+
+.logo h4{
+    font-weight: 550;
+    font-size: 18px;
+    color: #535353;
+}
+
+.container header .itens{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: center;
+}
+
+.container header .itens ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container header .itens ul li{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.container header .itens ul li a{
+    display: flex;
+    text-decoration: none;
+    padding: 15px;
+
+    font-size: 15px;
+    font-weight: 400;
+    color: #161616;
+}
+
+.container header .itens ul li a:hover{
+    color: #407cee;
+    transition: 0.2s;
+}
+
+.container header .itens ul li .empresa{
+    display: flex;
+    text-decoration: none;
+    padding: 10px;
+
+    font-size: 15px;
+    font-weight: 400;
+    color: #161616;
+
+    border-radius: 2px;
+    border: 1px #407cee solid;
+    
+}
+
+.container header .itens ul li .empresa:hover{
+    color: #fff;
+    background-color: #407cee;
+    transition: 0.2s;
+}
+
+.container header .itens ul li .item-1{
+    display: flex;
+    text-decoration: none;
+    padding: 10px;
+
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+
+    border-radius: 2px;
+    background-color: #407cee;
+}
+.container header .itens ul li .item-1:hover{
+    color: #fff;
+    background-color: #396ac5;
+}
+
+/*------------- PERFIL/VITRINE -----------------*/
+
+.container-two{
+    width: 100%;
+    display: flex;
+}
+
+.container-two .main-ctwo{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-two .texts{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    margin-right: 5px;
+    background-color: #fff;
+    padding: 15px;
+    padding-left: 42px;
+}
+
+.texts .img{
+    margin: auto;
+    border-radius: 100%;
+    border: none;
+    background-color: #f0f4ff;
+    overflow: hidden;
+}
+
+.texts .img img{
+    width: 140px;
+    height: 130px;
+}
+
+
+.texts .texts-one h3{
+    font-size: 25px;
+    color: #161616;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.texts .texts-one p{
+    margin: 0;
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.texts-two{
+    margin-top: 15px;
+}
+
+.texts-two p{
+    font-size: 15px;
+    color: #161616;
+}
+
+.texts-tree{
+    border: none;
+    border-radius: 1px;
+    margin-top: 15px;
+    border-top: 1px solid #1616161f;
+}
+
+.texts-tree h3{
+    font-size: 18px;
+    color: #161616;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.texts-tree p{
+    margin: 0;
+    margin-top: 5px;
+    font-size: 14.5px;
+    font-weight: 400;
+    text-align: left;
+    color: #161616;
+}
+
+.texts .div-about{
+    margin-top: 10px;
+    border-radius: 2px;
+    height: wrap;
+    border: 0.5px solid #396ac559;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.texts .div-about button{
+    border: none;
+    width: 320px;
+    text-align: justify;
+    height: 40px;
+    font-size: 16px;
+    background-color: #396ac518;
+    cursor: pointer;
+}
+
+
+.texts .div-about button:hover{
+    background-color: #396ac538;
+}
+
+.texts .div-about .text-about{
+    display: none;
+}
+
+.texts .div-about p{
+    font-size: 15px;
+}
+
+.texts .recomend h4{
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.texts .recomend p{
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+    color: #161616;
+    padding: 5px;
+}
+
+.texts .recomend button{
+    border: none;
+    width: 70%;
+    text-align: justify;
+    height: 40px;
+    font-size: 16px;
+    background-color: #396ac518;
+    cursor: pointer;
+}
+
+.texts .recomend button:hover{
+    background-color: #396ac538;
+}
+
+.texts .recomend .empresas_recomendadas{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.texts .recomend .empresas_recomendadas .card{
+    display: flex;
+    flex-direction: row;
+    width: 280px;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+
+    box-shadow: 0rem 0rem 0.1rem  #407dee5d;
+    cursor: pointer;
+    margin-top: 12px;
+    background-color: #fff;
+
+    transition: 0.1s;
+}
+
+.texts .recomend .empresas_recomendadas .card:hover{
+    box-shadow: 0rem 0.2rem 0.5rem  #407dee2f;
+    transition: 0.1s;
+}
+
+.texts .recomend .empresas_recomendadas .card .img-2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.texts .recomend .empresas_recomendadas .card img{
+    width: 60px;
+    
+}
+
+.texts .recomend .empresas_recomendadas h4{
+    font-size: 15px;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.right{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right .titulo-e-butao{
+    display: flex;
+    flex-direction: row;
+
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-two .main-two-ctwo{
+    width: 100%;
+    background-color: #f0f4ff;
+}
+
+.right .titulo-e-butao h3{
+    font-weight: 400;
+    font-size: 20px;
+    color: #161616;
+}
+
+.right .titulo-e-butao button{
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: #407cee;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+
+.main-two-ctwo .card{
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0rem 0rem 2rem #407dee15;
+    transition: 0.1s all;
+    border-radius: 1.5px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.main-two-ctwo .card:hover{
+    transform: scale(1.005);
+    transition: 0.1s;
+}
+
+.main-two-ctwo .card .image{
+    width: 250px;
+    overflow: hidden;
+    height: 160px;
+    background-color: #bdbdbd;
+}
+
+.main-two-ctwo .card .image img{
+    width: 250px;
+}
+
+
+.card .texts{
+    display: flex;
+    flex-direction: column;
+    
+
+    height: wrap;
+    width: 100%;
+
+    padding: 0px;
+}
+
+.card .texts h3{
+    font-weight: 500;
+    color: #161616;
+    font-size: 18px;
+    margin-left: 22px;
+}
+
+.card .texts p{
+
+    margin-top: 0;
+    text-align: start;
+    font-size: 13px;
+    color: #161616;
+    margin-left: 22px;
+}
+
+#vitrineexclusiva{
+    display: none;
+}
+
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #5423b5;
+    background-image: linear-gradient(43deg, #5423b5 32%, #5b1ebf 38%, #3318e0 100%);
+    ;
+  }
+
+
+
+
+  .popup3 .sim button{
+    width: 150px;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+    float: left;
+  }
+
+  .popup3 .nao button{
+    width: 150px;
+    margin-top: 50px;
+    padding: 5px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+    float: left;
+    margin-left: 100px;
+  }
+
+  .popup3 p{
+      font-size: 18px;
+      font-family: 'Open Sans',sans-serif;
+
+  }
+
+  .popup2{
+      z-index: 1;
+      background-color: white;
+      height: 600px;
+      width: 800px;
+      margin-left: 20%;
+      position: fixed;
+      margin-top: 2%;
+      padding: 10px;
+      visibility: hidden;
+      
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.popup2 .conteudoPopup2{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.popup2 .conteudoPopup2 .fotoPerfil img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+.popup2 .tituloh{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.popup2 .tituloh i{
+    font-size: 25px;
+    color: rgb(177, 177, 177);
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+.popup2 .tituloh i:hover{
+    color: red;
+}
+
+.popup2 .tituloh button{
+    border: none;
+    background: none;
+}
+
+.popup2 .tituloh button:focus{
+    outline: none;
+}
+
+.popup2 .tituloh p{
+    width: 100%;
+    font-size: 25px;
+    margin-left: 5px;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.popup2 .subtituloh p{
+    margin-left: 5px;
+    margin-top: -10px;
+    font-size: 18px;
+    color: rgb(70, 70, 70);
+    font-family: 'Open Sans',sans-serif;
+}
+
+.popup2 table{
+    width: 700px;
+    margin-top: 40px;
+}
+
+.popup2 table tr{
+    height: 80px;
+}
+
+.popup2 table .osBotao{
+    width: 120px;
+}
+
+.popup2 table .oNome{
+    font-weight: 600;
+    width: 120px;
+}
+
+.popup2 table .oNome a{
+    text-decoration: none;
+}
+
+.popup2 table .aFoto{
+    width: 60px;
+}
+
+.popup2 table .aDescricao{
+    color: rgb(105, 105, 105);
+    width: 370px;
+}
+
+.popup2 table tr{
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+.popup2 .aceitar button{
+    width: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+}
+
+.popup2 .recusar button{
+    width: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 1.5px;
+    outline: none;
+}
+
+
+
+  .popup{
+      display: none;
+      background-color: white;
+      height: 600px;
+      width: 800px;
+      margin-left: 20%;
+      position: fixed;
+      margin-top: 2%;
+      visibility: hidden;
+      
+    -webkit-box-shadow: 0 0 0.2rem rgba(26, 26, 26, 0.192);
+    box-shadow: 0 0 0.2rem rgba(24, 24, 24, 0.192);
+  }
+
+  .popup .conteudoPopup{
+      display: grid;
+      grid-template-columns: 48% 50%;
+  }
+
+  .popup .LadoEsquerdo{
+    background-color: rgb(243, 243, 243);
+      height: 420px;
+      margin-left: 30px;
+      border-radius: 5px;
+      
+  }
+
+  .popup .tituloPopup p{
+      font-family: 'Open Sans',sans-serif;
+      font-size: 20px;
+      margin-top: 50px;
+      margin-left: 30px;
+      float: left;
+  }
+
+  .popup .tituloPopup button{
+      width: 10px;
+      border: none;
+      background-color: white;
+  }
+
+  .popup .tituloPopup button:focus{
+      outline: none;
+  }
+
+  .popup .tituloPopup i{
+      font-size: 30px;
+      margin-top: 50px;
+      color: rgb(255, 196, 196);
+
+      margin-left: 400px;
+  }
+
+  .popup .tituloPopup i:hover{
+      color: red;
+  }
+
+  .popup .tituloPopup{
+      width: 90%;
+      height: 50px;
+  }
+
+
+  .popup .LadoDireito{
+      height: 300px;
+      margin-left: 30px;
+      margin-right: 30px;
+      border-radius: 5px;
+  }
+
+  .popup .LadoDireito .parteCima i{
+      float: left;
+      font-size: 25px;
+      color: rgb(104, 104, 104);
+      margin-left: 20px;
+  }
+
+  .popup .LadoDireito .parteCima{
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+  }
+
+  .popup .LadoEsquerdo textarea{
+      height: 100px;
+      width: 340px;
+      border: none;
+      margin-left: 10px;
+      border-radius: 8px;
+      font-family: 'Open Sans',sans-serif;
+      resize: none;
+  }
+
+  .popup .LadoEsquerdo textarea:focus{
+      outline: none;
+      padding: 5px;
+  }
+
+  .popup .LadoEsquerdo p{
+      margin-left: 10px;
+      margin-top: 30px;
+      color: rgb(51, 51, 51);
+      font-family: 'Open Sans',sans-serif;
+  }
+  .popup .LadoDireito .parteCima p{
+    margin-left: 50px;
+    color: rgb(51, 51, 51);
+    font-family: 'Open Sans',sans-serif;
+}
+
+.popup .LadoDireito .parteCima input{
+    visibility: hidden;
+}
+
+.popup .LadoDireito .parteCima label{
+    font-family: 'Open Sans',sans-serif;
+    margin-left: 20px;
+    margin-top: -3px;
+    color: gray;
+    font-size: 15px;
+    padding: 5px;
+    float: left;
+    border-radius: 5px;
+}
+
+.popup .LadoDireito .parteCima label:hover{
+    color: black;
+}
+
+.popup .LadoDireito .parteBaixo .Imagem{
+    height: 160px;
+}
+
+.popup .LadoDireito .parteBaixo{
+    margin-top: 30px;
+    height: 160px;
+    background-color:  rgb(243, 243, 243);
+    border-radius: 5px;
+}
+
+.popup .LadoDireito .parteBaixo button{
+    color: white;
+    height: 40px;
+    font-family: 'Open Sans',sans-serif;
+    border: none;
+    background: rgb(124, 92, 245);
+    background: linear-gradient(31deg, rgba(124, 92, 245, 1) 44%, rgba(64, 125, 238, 1) 100%);
+    width: 350px;
+
+}
+
+.popup .LadoDireito .parteCima a{
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.popup .LadoDireito .parteBaixo .Imagem i{
+    font-size: 50px;
+    margin-left: 150px;
+    margin-top: 50px;
+    color: rgb(216, 216, 216);
+}
+
+  .popup .LadoEsquerdo input{
+      border: none;
+      width: 340px;
+      margin-left: 10px;
+      height: 30px;
+      padding: 5px;
+      font-family: 'Open Sans',sans-serif;
+      border-radius: 5px;
+  }
+
+  .popup .LadoEsquerdo .preco{
+      color: green;
+  }
+
+  .popup .LadoEsquerdo input:focus{
+      outline: none;
+  }

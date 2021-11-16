@@ -1,42 +1,43 @@
 <?php
- 
+require_once('global.php');
 
- $nome = $_POST['txtNome'];
- $cpf = $_POST['txtCpf'];
- $email = $_POST['txtEmail'];
- $senha = $_POST['txtSenha'];
- $tel1 = $_POST['txtTel1'];
- $tel2 = $_POST['txtTel2'];
- $log = $_POST['txtLog'];
- $num = $_POST['numero'];
- $cep = $_POST['txtCep'];
- $bairro = $_POST['txtBairro'];
- $cidade = $_POST['txtCidade'];
- $estado = $_POST['txtEstado'];
- $msgErro = "";
+$cliente = new Cliente();
 
-include("conexao.php");
-$pdo = CONNECTION::GET_PDO();
+$cliente->setNomecliente($_POST['txtNome']);
+$cliente->setCpfcliente($_POST['txtCpf']);
+$cliente->setEmailcliente($_POST['txtEmail']);
+$cliente->setSenhacliente($_POST['txtSenha']);
+$cliente->setTelefonecliente($_POST['txtTel']);
+$cliente->setLogradouro($_POST['txtLog']);
+$cliente->setNum($_POST['numero']);
+$cliente->setCep($_POST['txtCep']);
+$cliente->setBairro($_POST['txtBairro']);
+$cliente->setCidade($_POST['txtCidade']);
+$cliente->setEstado($_POST['txtEstado']);
 
- $stmt = $pdo->prepare("SELECT nomeCliente FROM tbcliente WHERE cpfCliente ='$cpf'");
- $stmt->execute();
- $result = $stmt->fetch(PDO::FETCH_ASSOC);
- 
- if(empty($result)){
 
-    try{
-        $stmt = $pdo->prepare("INSERT INTO tbcliente VALUES (null, '$nome', '$cpf', '$email', '$senha', '$log', '$estado', '$cidade', '$bairro', '$cep', '$num')");
-        $stmt->execute();
+/*ANTES DE FAZER O INSERT, VAMOS VERIFICAR O EMAIL E O CPF*/
 
-    }catch(PDOException $err){
-        print("Erro: ".$err);
+$value_email = $cliente->verificarEmail($cliente);
+$value_cpf = $cliente->verificarCpf($cliente);
+
+/*SE O EMAIL RETORNAR UM FALSE, SIGNIFCIA QUE NÃO FOI ENCONTRADO ESSE EMAIL/CPF NO BANCO
+SE FOR TRUE ELE RETORNA UM ALERT*/
+
+if (empty($value_cpf)) {
+    if (empty($value_email)) {
+        try {
+            $cliente->cadastrar($cliente);
+
+            header("Location: Login-Client.php");
+        } catch (PDOException $err) {
+            print("Erro: " . $err);
+        }
+    } else {
+        echo ('<script> resultado = confirm("Email já cadastrado"); if(resultado){location.href="Cadastro-Cliente.php";} else{
+            location.href="index.php"; } </script>');
     }
-
-    header("Location: Login-Client.php");
+} else {
+    echo ('<script> resultado = confirm("CPF já cadastrado"); if(resultado){location.href="Cadastro-Cliente.php";} else{
+        location.href="index.php"; } </script>');
 }
-else{
-    echo ('<script> resultado = confirm("CPF já cadastrado"); if(resultado == true){location.href="Cadastro-Cliente.php";} else{
-        location.href="index.html"; } </script>');
-}
-
-?>

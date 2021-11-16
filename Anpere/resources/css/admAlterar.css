@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 1,100; 1,200; 1,300; 1,400; 1.500; 1.600 & display = swap ');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  display: grid;
+  width: 900px;
+  margin: auto;
+  margin-top: 2%;
+  grid-template-columns: 800px 100px;
+  box-shadow: 0 0.2rem 0.5rem #4f36ef41;
+}
+
+/* ------------ GRID FORM-CLIENTE ------------- */
+
+.grid-um{
+    padding: 4%;
+    padding-top: 1%;
+}
+
+.titulo{
+    font-size: 15px;
+}
+
+.subtitulo p{
+    font-size: 9px;
+    color: #5138ec;
+    margin-top: 5%;
+}
+
+.label{
+    font-size: 11px;
+}
+
+.form .nome{
+    width: 700px;
+    height: 30px;
+    border: 0.5px #4f36ef38 solid;
+    outline: none;
+}
+
+.form .nome:focus{
+    box-shadow: 0 0rem 0.4rem #4f36ef41;
+    transition: 0.5s;
+}
+
+.form input{
+    width: 343px;
+    height: 30px;
+    border: 0.5px #4f36ef38 solid;
+    outline: none;
+}
+
+.form input:focus{
+    box-shadow: 0 0rem 0.4rem #4f36ef41;
+    transition: 0.5s;
+}
+
+.grupo .logradouro{
+    width: 630px;
+}
+
+.grupo .numero{
+    width: 50px;
+}
+
+.grupo .cep{
+    width: 100px;
+}
+
+.grupo .bairro{
+    width: 230px;
+}
+
+.grupo .estado{
+    width: 230px;
+}
+
+.grupo .senha-cliente{
+    width: 230px;
+}
+
+
+.btn{
+    width: 230px;
+    background-color: black;
+    border: none;
+    height: 30px;
+    color: white;
+    box-shadow: 0 0.2rem 0.4rem #00000069;
+}
+
+.grid-dois{
+    background-color: #5138ec;
+    
+}
+
+@media screen and (max-width: 900px){
+    body{
+        
+    }
+
+    .container {
+        display: grid;
+        width: 700px;
+        margin: auto;
+        margin-top: 10%;
+        grid-template-columns: 650px 50px;
+        box-shadow: 0 0.2rem 0.5rem #4f36ef41;
+      }
+
+      .form .nome{
+        width: 550px;
+        height: 30px;
+        border: 0.5px #4f36ef38 solid;
+        outline: none;
+    }
+
+    .form input{
+        width: 270px;
+        height: 30px;
+        border: 0.5px #4f36ef38 solid;
+        outline: none;
+    }
+
+    .grupo .logradouro{
+        width: 490px;
+    }
+
+    .grupo .cidade{
+        width: 203px;
+    }
+
+    .grupo .estado{
+        width: 100px;
+    }
+
+    .grupo button{
+        width: 203px;
+    }
+}
+
+@media screen and (max-width: 720px){
+    body{
+    }
+
+    .grid-dois{
+    }
+
+    .container {
+        display: grid;
+        width: 400px;
+        margin: auto;
+        margin-top: 10%;
+        grid-template-columns: 390px 10px;
+        box-shadow: 0 0.2rem 0.5rem #4f36ef41;
+        
+        margin-bottom: 10%;
+      }
+
+      .form .nome{
+          width: 340px;
+      }
+
+      .form input{
+          width: 340px;
+      }
+
+      .form .logradouro{
+          width: 290px;
+      }
+
+      .form .cidade{
+          width: 339px;
+          margin-left: -5px;
+      }
+
+      .form button{
+          margin-left: -5px;
+      }
+      
+}
+
