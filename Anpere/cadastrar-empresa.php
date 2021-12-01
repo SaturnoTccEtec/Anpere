@@ -17,7 +17,7 @@ $empresa->setCidade($_POST['txtCidade']);
 $empresa->setEstado($_POST['txtEstado']);
 
 /* CATEGORIA PADRÃO */
-$empresa->setIdcategoria(1);
+$empresa->setIdcategoria(20);
 
 
 /*ANTES DE FAZER O INSERT, VAMOS VERIFICAR O EMAIL E O CNPJ*/
@@ -32,9 +32,9 @@ SE FOR != DE VAZIO ELE RETORNA UM ALERT*/
 if (empty($value_cnpj)) {
     if (empty($value_email)) {
         try {
-            $empresa->cadastrar($empresa);
+            $idCadastro = $empresa->cadastrar($empresa);
+            $queryEmpresa = $empresa->readEmpresas($idCadastro);
 
-            $queryEmpresa = $empresa->readEmpresas($empresa);
             $id = $queryEmpresa['idEmpresa'];
             if(isset($id)){
 
@@ -49,7 +49,9 @@ if (empty($value_cnpj)) {
         }
     } else {
         echo ('<script> resultado = confirm("Email já cadastrado"); if(resultado){location.href="Cadastro-Empresa.php";} else{
-            location.href="index.php"; } </script>');
+            document.querySelector("input[id="cnpj"]").style.border = "2px solid #900"
+            location.href="index.php"
+             } </script>');
     }
 } else {
     echo ('<script> resultado = confirm("CNPJ já cadastrado"); if(resultado){location.href="Cadastro-Empresa.php";} else{

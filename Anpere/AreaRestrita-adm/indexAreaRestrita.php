@@ -162,7 +162,7 @@ $pdo = Connection::GET_PDO(); ?>
         <section class="card about">
 
             
-            <h3>0</h3>
+            <h3>20</h3>
             <span>Parcerias realizadas</span>
           
         </section>

@@ -35,6 +35,16 @@ public function readPublicacao($idEmpresa){
     return $retorno;
 }
 
+public function readPublicacao2($idEmpresa){
+    $conn = Connection::GET_PDO();
+
+    $querySelect = "SELECT * FROM tbpublicacao WHERE idEmpresa = '$idEmpresa' LIMIT 2";
+    $resultado = $conn->query($querySelect);
+    $retorno = $resultado->fetchAll();
+
+    return $retorno;
+}
+
 /* --------- GETTERS & SETTERS -------- */
     public function getIdpublicacao()
     {

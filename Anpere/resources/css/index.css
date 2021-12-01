@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
 @import url('https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 1,100; 1,200; 1,300; 1,400; 1.500; 1.600 & display = swap ');
 
-*{
-    transition: 0.2s;
-}
-
 body{
-    padding: 0;
+    background-color: #f7fafc;
+}
+*{
+    font-family: 'Poppins',sans-serif;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f4ff;
+    padding: 0;
+    transition: 0.2s;
 }
 
 
@@ -40,7 +38,7 @@ body{
 }
 
 .container header .logo img{
-    width: 30px;
+    width: 140px;
 }
 
 .container header .itens{
@@ -98,9 +96,8 @@ body{
     transition: 0.2s;
 }
 
-/* --------------- SEARCH BOX -----------------*/
-
-.container-two{
+.container-two {
+    margin-top: 20px;
     width: 100%;
     height: 13vh;
     display: flex;
@@ -109,52 +106,206 @@ body{
     align-items: center;
 }
 
-.container-two .main{
-    width: wrap;
+.container-two .titulo {
+    margin-top: 40px;
+    margin-bottom: 0px;
     display: flex;
-    flex-direction: row;
-    padding: 5px;
-    justify-content: center;
-    box-shadow: 0rem 0rem 2rem  #407dee18;
+    width: 1035px;
+    text-align: justify;
 }
 
-.dropdown{
-    width: 200px;
-    position: relative;
+
+.container-tree .titulo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    width: 1035px;
+    text-align: justify;
 }
 
-/* --------------- SELECT RAIZ -----------------*/
-
-.dropdown select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: none;
-
-    width: 105%;
-    height: 100%;
-    padding: 5px;
-
-    border: none;
-    font-size: 15px;
+.container-tree h3 {
+    font-size: 20px;
     font-weight: 500;
+    color: #161616;
+    margin-left: -80px;
+    margin-top: 0px;
+}
 
+.containeri{
+    margin-top: 4rem;
+}
+
+.containeri .titulo {
+    margin-top: 3rem;
+    display: flex;
+    width: 1035px;
+    text-align: justify;
+    margin-left: 150px;
+}
+
+.containeri h3 {
+    font-size: 20px;
+    font-weight: 500;
     color: #161616;
 }
 
-.dropdown::after{
-    content: '\25BC';
+.container-two h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+}
+
+.container-two .main {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border: 1px solid rgba(102, 102, 102, 0.541);
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 10px 20px #407dee17;
+}
+
+
+
+/*----------- BANNER -----------------*/
+
+.banner{
+    height: 600px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.banner .ConteudoDoBanner{
+    width: 45%;
+    padding-left: 70px;
+    padding-top: 140px;
     position: absolute;
-    top: 12px;
-    right: 8px;
-    pointer-events: none;
 }
 
-.dropdown select:hover:before{
-    background-color:#407cee;
+.banner .ConteudoDoBanner .Texto1{
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
 }
 
+.banner .ConteudoDoBanner .Texto2{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.banner .ConteudoDoBanner button{
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: #305cad;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 50px;
+    font-size: 16px;
+}
+/*----------- BARRA DE ROLAGEM -----------------*/
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #5423b5;
+    background-image: linear-gradient(43deg, #5423b5 32%, #5b1ebf 38%, #3318e0 100%);
+    ;
+  }
+
+  /* --------------- SEARCH BOX -----------------*/
+
+  .container-two {
+    margin-top: 20px;
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-two .titulo {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    display: flex;
+    width: 1035px;
+    text-align: justify;
+}
+
+
+.container-tree .titulo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    width: 1035px;
+    text-align: justify;
+}
+
+.container-tree h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+    margin-left: -80px;
+    margin-top: 0px;
+}
+
+.containeri{
+    margin-top: 4rem;
+}
+
+.containeri .titulo {
+    margin-top: 3rem;
+    display: flex;
+    width: 1035px;
+    text-align: justify;
+    margin-left: 150px;
+}
+
+.containeri h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+}
+
+.container-two h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+}
+
+.container-two .main {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border: 1px solid rgba(102, 102, 102, 0.541);
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 10px 20px #407dee17;
+}
+
+.texto-index{
+    width: 1035px;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.texto-index h3{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.texto-index p{
+    font-size: 19px;
+    font-weight: 400;
+}
 
 /*--------- CSS DO SELECT OPCIONAL ---------*/
 .dropdown-select{
@@ -283,6 +434,7 @@ body{
     display: flex;
     width: 1050px;
     text-align: justify;
+    margin-top: 20px;
 }
 
 .container-tree h3{
@@ -296,42 +448,60 @@ body{
     justify-content: center;
 }
 
-.main-two .card{
-    width: 20%;
+.main-two .card {
+    width: 240px;
     background-color: #fff;
-    box-shadow: 0rem 0rem 2rem #407dee15;
+    border: 1px solid #d3d3d3c0;
+    background-color: #fff;
     transition: 0.1s all;
-    border-radius: 1.5px;
+    border-radius: 3px;
     float: left;
     margin-left: 50px;
-    margin-top: 20px;
+    overflow: hidden;
+    margin-top: 1rem;
+
 }
 
-.main-two .card:hover{
+#map_span{
+    text-decoration: none;
+    margin-left: 1rem;
+    border: 1px solid #407cee;
+    padding: 0.5rem;
+    margin-top: -10px;
+    background-color: #407cee;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.main-two .card:hover {
     transform: scale(1.005);
-    transition: 0.1s;
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px rgba(22, 22, 22, 0.288);
 }
 
-.main-two .card .image{
+.main-two .card .image {
     width: 100%;
     overflow: hidden;
     height: 150px;
     background-color: #bdbdbd;
 }
 
-.main-two .card .image img{
+.main-two .card .image img {
     width: 250px;
 }
 
 
-.texts{
+
+.texts {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 18vh;
 }
 
-.texts h3{
+.texts h3 {
+    width: 90%;
+    margin: auto;
     text-align: center;
     font-weight: 500;
     color: #161616;
@@ -339,11 +509,11 @@ body{
     margin-bottom: 10px;
 }
 
-.texts p{
+.texts p {
     margin-top: 0;
     padding: 5px;
     text-align: start;
-    
+
     font-size: 13px;
     border-bottom: 1px solid #1616162d;
     color: #161616;
@@ -411,7 +581,7 @@ body{
     width: 45%;
     background-color: #fff;
     height: 300px;
-    box-shadow: 0rem 0rem 4rem #407dee2d;
+    box-shadow: 0rem 0rem 4rem #b3b3b32d;
     border-radius: 3px;
     justify-content: center;
     align-items: center;
@@ -525,6 +695,147 @@ body{
     background-color: #1d3869;
 }
 
+
+.categorias{
+    background-color: #407cee;
+}
+
+
+.ct{
+    border-radius: 100px;
+    width: 50%;
+    height: 85%;
+    background-color: white;
+    
+}
+
+.icones{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    padding-left: 100px;
+}
+
+.ct img{
+    border-radius: 100px;
+    width: 100%;
+}
+
+.ct:hover{
+}
+
+.icones .ct2{
+    color: white;
+    align-items: center;
+    align-self: center;
+}
+
+
+ /*----------- ESTRELAS ---------*/
+
+ .rating {
+     margin-top: -10px;
+    width: 226px;
+    font-size: 25px;
+    overflow:hidden;
+    padding-left:2rem;
+}
+.rating input {
+float: right;
+opacity: 0;
+position: absolute;
+}
+.rating a,
+.rating label {
+    float: right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+    color: orange;
+}
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a		{
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+}
+.rating2 {
+    direction: rtl;
+    margin-left: -105px;
+}
+.rating2 a {
+    float:none
+}
+
+
+
+.rating3 {
+    width: 226px;
+    font-size: 35px;
+    overflow:hidden;
+}
+.rating3 input {
+float: right;
+opacity: 0;
+position: absolute;
+}
+.rating3 a,
+.rating3 label {
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+.rating3 label:hover ~ label,
+.rating3 input:focus ~ label,
+.rating3 label:hover,
+.rating3 a:hover,
+.rating3 a:hover ~ a,
+.rating3 a:focus,
+.rating3 a:focus ~ a		{
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+}
+.rating4 {
+    direction: rtl;
+    margin-left: -105px;
+}
+.rating4 a {
+    float:none
+}
+
+
+/*------------- COMENTÁRIOS ------------*/
+
+.coment{
+    margin-left: 18px;
+    margin-top: 10px;
+}
+
+.coment button{
+    background: none;
+    border: none;
+    color: rgb(87, 87, 87);
+}
+
+.coment button:hover{
+    color: royalblue;
+}
+
+
+
+
 /*-----------FOOTER---------*/
 
 .container-five{
@@ -597,17 +908,39 @@ footer a:hover{
     background-color: #ede9f6;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    background: var(--dark);
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #5423b5;
-    background-image: linear-gradient(43deg, #5423b5 32%, #5b1ebf 38%, #3318e0 100%);
-    ;
-  }
+.dropdown {
+    width: 200px;
+    position: relative;
+}
 
+/* --------------- SELECT RAIZ -----------------*/
 
+.dropdown select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: none;
 
+    width: 105%;
+    height: 100%;
+    padding: 5px;
 
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #161616;
+}
+
+.dropdown::after {
+    content: '\25BC';
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    pointer-events: none;
+}
+
+.dropdown select:hover:before {
+    background-color: #407cee;
+}

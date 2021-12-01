@@ -33,6 +33,7 @@ $pdo = Connection::GET_PDO();
         //SE OK, LOGIN TRUE 
         $_SESSION['login'] = true;
         $_SESSION['level'] = "empresa";
+        $_SESSION['cnpj_unique'] = $cnpjBanco;
         
         if($login!=null and $login!=""){
             $idLogin = (int)$login;

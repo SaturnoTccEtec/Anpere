@@ -18,7 +18,7 @@
     <header>
 
       <div class="logo">
-        <img src="resources/images/LogoAnpere.png" alt="Logo Anpere">
+      <img style="width: 23%;" src="./resources/images/LogoComNome.png" alt="Logo Anpere">
       </div>
 
       <div class="itens">
@@ -29,6 +29,7 @@
       </div>
     </header>
   </div>
+
 
   <div class="container-two">
     <div class="main-two">

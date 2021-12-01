@@ -33,6 +33,37 @@
 </head>
 
 <body>
+
+<div class="categorias">
+  <br>
+
+        <div class="icones">
+        <a href="busca_empresa.php?category=4"><div class="ct"><img src="../resources/images/auau.png"></div></a>
+        <a href="busca_empresa.php?category=10"><div class="ct"><img src="../resources/images/sofa.png"></div></a>
+        <a href="busca_empresa.php?category=1"><div class="ct"><img src="../resources/images/sedan.png"></div></a>
+        <a href="busca_empresa.php?category=16"><div class="ct"><img src="../resources/images/guitarra.png"></div></a>
+        <a href="busca_empresa.php?category=9"><div class="ct"><img src="../resources/images/cabide.png"></div></a>
+        <a href="busca_empresa.php?category=6"><div class="ct"><img src="../resources/images/brinquedo.png"></div></a>
+        <a href="busca_empresa.php?category=2"><div class="ct"><img src="../resources/images/chave-inglesa.png"></div></a>
+        <a href="busca_empresa.php?category=18"><div class="ct"><img src="../resources/images/estetoscopio.png"></div></a>
+        <a href="busca_empresa.php?category=13"><div class="ct"><img src="../resources/images/bla.png"></div></a>
+        <a href="busca_empresa.php?keyword=&endereco="><div class="ct"><img src="../resources/images/outros.jpg"></div></a>
+      </div>
+      <div class="icones">
+        <div class="ct2"><label>Animais</label></div>
+        <div class="ct2"><label>Moveis</label></div>
+        <div class="ct2"><label>Auto peças</label></div>
+        <div class="ct2"><label>Música</label></div>
+        <div class="ct2"><label>Roupas</label></div>
+        <div class="ct2"><label>Infantil</label></div>
+        <div class="ct2"><label>Assistencia</label></div>
+        <div class="ct2"><label>Saúde</label></div>
+        <div class="ct2"><label>Esporte</label></div>
+        <div class="ct2"><label>Outros</label></div>
+      </div>
+      <br>
+</div>
+
 <div class="container-two">
       <form method="GET" action="busca_empresa.php?cnpj=<?php echo $cnpj?>">
         <div class="main">
@@ -64,7 +95,7 @@
             </div>
 
             <div class="button">
-              <button type="submit">Find</button>
+              <button type="submit">Procurar</button>
             </div>
           </div>
 
@@ -94,6 +125,17 @@
               <h3><?php echo $empresas['nomeEmpresa']; ?></h3>
               <p><?php echo ("Rua " . $empresas['logradouroEmpresa'] . " - " . $empresas['bairroEmpresa'] . ", " . $empresas['estadoEmpresa']); ?></p>
             </div>
+
+            <div class='estrelas'>
+              <div class='rating rating2'><!--
+              --><a href='#5' title='Give 5 stars'>★</a><!--
+              --><a href='#4' title='Give 4 stars'>★</a><!--
+              --><a href='#3' title='Give 3 stars'>★</a><!--
+              --><a href='#2' title='Give 2 stars'>★</a><!--
+              --><a href='#1' title='Give 1 star'>★</a>
+            </div>
+          </div>
+          
             <div class="button">
             <a href="perfilEmpresa_empresa.php?id=<?php echo $empresas['idEmpresa']; ?>"><button>Mais</button></a>
             </div>

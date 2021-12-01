@@ -25,8 +25,7 @@ while($row = $stmt->fetch(PDO::FETCH_BOTH)){
 
     $tituloPublicacao = $_POST['txtTitulo'];
     $descricaoPublicacao = $_POST['txtDescricao'];
-    $fotoProdutoPublicacao = $_FILES['txtFoto'];
-    $foto = $_POST['txtFoto'];
+    $fotoProdutoPublicacao = $_FILES['arquivo'];
     $precoProdutoPublicacao = $_POST['txtPreco'];
 
     //echo $descricaoPublicacao;

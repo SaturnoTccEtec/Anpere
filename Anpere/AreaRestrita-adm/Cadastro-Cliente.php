@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anpere - entre ou cadastre-se</title>
     <link href="../resources/images/LogoAnpere.png" rel="icon">
-    <link rel="stylesheet" href="../css/cadastro.css" media="screen">
+    <link rel="stylesheet" href="../resources/css/cadastro.css" media="screen">
     <script src="../resources/js/validarCep.js" type='module' defer></script>
     
 

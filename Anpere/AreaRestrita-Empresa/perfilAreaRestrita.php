@@ -3,7 +3,8 @@
 session_start();
 require_once('../global_two.php');
 
-$id = $_GET['id'];
+//$id = $_GET['id'];
+$id = $_SESSION['idEmpresa'];
 
 //PEGANDO EMPRESA PRO PERFIL
 $empresa = new Empresa();
@@ -25,6 +26,9 @@ $data_publicacao = $publicacao->readPublicacao($id);
 $recomendacao = new Recomendacao();
 $data_recomendacao = $recomendacao->allRec($id);
 
+//PEGANDO AS SOLICITAÇÕES
+$solicitacao = new SolicitacaoParceria();
+$solicitacoes = $solicitacao->selectSolicitacao($id);
 
 ?>
 
@@ -37,9 +41,11 @@ $data_recomendacao = $recomendacao->allRec($id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="chat/style.css">
     <link rel="stylesheet" href="../resources/css/perfil.css" media="screen">
-
-    <title></title>
+    <link href="../resources/images/LogoAnpere.png" rel="icon">
+    <title>Perfil</title>
 </head>
 
 <body>
@@ -57,20 +63,18 @@ $data_recomendacao = $recomendacao->allRec($id);
                     <p> Descrição do produto: </p>
                     <textarea name="txtDescricao" placeholder="Digite aqui..." required> </textarea>
                     <p> Preço: </p>
-                    <input name="txtPreco" class="preco" type="number">
+                    <input name="txtPreco" class="preco" type="number" placeholder="R$">
+                    
             </div>
             <div class="LadoDireito">
                 <div class="parteCima">
                     <br>
-                    <i class="far fa-images"></i>
-                    <label for="txtFoto"> Carregar Imagem </label>
-                    <a href="#"> Salvar <a>
-                            <input name="txtFoto" id="txtFoto" type="file" required>
+                    <label for="escolher">Escolher foto <i class="far fa-images"></i> </label>
+                     <input id="escolher" type="file" name="arquivo" onchange="previewImagem()" style="visibility: hidden" required>
                 </div>
                 <div class="parteBaixo">
-                    <div class="Imagem">
-
-                        <i class="fas fa-question"></i>
+                    <div class="imagem">
+                            <img src="../resources/images/SemFoto.png" id="img">
                     </div>
                     <button type="submit"> Publicar </button>
                 </div>
@@ -82,15 +86,40 @@ $data_recomendacao = $recomendacao->allRec($id);
     <div id="popup2" class="popup2">
         <div class="conteudoPopup2">
             <div class="tituloh">
-                <div>
-                    <p>Solicitações de parceria</p>
-                </div>
+                <p>Solicitações de parceria</p>
                 <div><button onclick="fechar2()"><i class="fas fa-times"></i></button></div>
             </div>
             <div class="subtituloh">
                 <p> Aceite ou recuse as solicitações de parceria pendentes</p>
             </div>
+            <div class="table-popup2">
+                <?php
+                if ($solicitacoes == null) {
+                    $soliIcon = "far fa-bell";
+                    $soliColor = "#000";
+                } else {
+                    $soliIcon = "fa fa-exclamation-circle";
+                    $soliColor = "#f00";
+                    foreach ($solicitacoes as $dado) {
+                        $remetente = $empresa->readEmpresas($dado['idRemetente']);
+                        $solici_perfil = $perfilempresa->readPerfil($dado['idRemetente']);
+                ?>
+                        <div class="tr">
 
+                            <div class="foto-nome">
+                                <div class="img"><img <?php echo "src='../resources/images/upload/perfilEmpresa/" . $solici_perfil['fotoPerfilEmpresa'] . "'"; ?> class="img-perfil"></div>
+                                <div class="nome"><?php echo $remetente['nomeEmpresa']; ?></div>
+                            </div>
+
+                            <div class="buttons-solicitacao">
+                                <div class="btn btn-1"><a href="inserirRecomendacao.php?idRemetente=<?php echo $dado['idRemetente'] ?>"><button>Aceitar</button></a></div>
+                                <div class="btn btn-2"><a href="excluirSolicitacao.php?idRemetente=<?php echo $dado['idRemetente'] ?>"><button>Recusar</button></a></div>
+                            </div>
+
+                        </div>
+                <?php }
+                } ?>
+            </div>
         </div>
     </div>
 
@@ -99,20 +128,24 @@ $data_recomendacao = $recomendacao->allRec($id);
         <header>
 
             <div class="logo">
-                <img src="../resources/images/LogoAnpere.png" alt="Logo Anpere">
+                <img src="../resources/images/LogoComNome.png" alt="Logo Anpere">
             </div>
 
             <div class="itens">
                 <ul>
                     <li><a class="item-1" href="indexAreaRestrita.php">Buscar parcerias</a></li>
-                    <li><a onclick="abrir()" class="item-2" href="#">
-                            <p><i class="far fa-bell"></i> Notificações</p>
+                    <li><a style="cursor: pointer;" onclick="abrir()" class="item-2">
+                            <p><i <?php echo 'class="'. $soliIcon .'" style="color: '. $soliColor .';"' ?>></i> Notificações</p>
                         </a></li>
-                    <li><a class="item-3" href="../Session/destruirSessao.php?pagina=index.php">Log out</a></li>
+                    <li><a class="item-3" href="../Session/destruirSessao.php?pagina=index.php">
+                            <p><i class="fas fa-power-off" _mstvisible="2"></i> Log out</p>
+                        </a></li>
                 </ul>
             </div>
         </header>
     </div>
+
+
 
     <div class="container-two">
         <div class="main-ctwo">
@@ -136,91 +169,126 @@ $data_recomendacao = $recomendacao->allRec($id);
                         <p><?php echo $data_perfil['biografiaPerfilEmpresa'] ?></p>
                     </div>
                 </div>
+            </div>
 
-                <div class="recomend">
-                    <h4>Você recomenda:</h4>
-                    <button onclick="adicionar2()">
-                        <p>Ver vitrine recomendados <i class="far fa-star"></i></p>
-                    </button>
-                    <div class="empresas_recomendadas">
-                        <?php if ($data_recomendacao == null) {
-                        } else {
-                            foreach ($data_recomendacao as $data) {
-                                $data_perfil_recomendacao = $perfilempresa->readPerfil($data['idEmpresaRecomendada']);
-                                $info_empresa = $recomendacao->recEsp($data['idEmpresaRecomendada']);
+            <div class="vitrines">
 
-                                $data_publicacao2 = $publicacao->readPublicacao($data['idEmpresaRecomendada']);
-                        ?>
+                <!-- VITRINES -->
 
-                                <div class="card">
-                                    <div class="img-2">
-                                        <img <?php echo "src='../resources/images/upload/perfilEmpresa/" . $data_perfil_recomendacao['fotoPerfilEmpresa'] . "'"; ?>>
+                <!--VITRINE DESTINADA A EMPRESA -->
+                <div class="vitrine_um">
+
+                    <div class="titulo-e-butao">
+                        <h3>Produtos e Serviços</h3>
+                        <button onclick="adicionar()">
+                            <i class="fas fa-plus-circle"></i>
+                        </button>
+                    </div>
+
+                    <?php if (empty($data_publicacao)) { ?>
+                        <div class="text_vitrine_um">
+                            <h3>Esta é a sua vitrine, divulgue seus serviços/produtos aqui.</h3>
+                            <p>Clique no ícone acima para adicionar uma nova publicação.</p>
+                        </div>
+                    <?php } else { ?>
+                        <div class="container_cards">
+                            <?php foreach ($data_publicacao as $data) { ?>
+
+
+
+                                <a href="">
+                                    <div class="card">
+                                        <div class="img">
+                                            <img src="../resources/images/upload/publicacao/<?php echo $data['fotoProdutoPublicacao']; ?>" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <h3><?php echo $data['tituloPublicacao'] ?></h3>
+                                            <p class="preco">R$<?php echo $data['precoProdutoPublicacao'] ?></p>
+                                            <p class="desc"><?php echo $data['descricaoPublicacao'] ?></p>
+                                        </div>
                                     </div>
-                                    <h4><?php echo $info_empresa['nomeEmpresa']; ?></h4>
-                                </div>
+                                </a>
+
+
 
                         <?php }
-                        }
-                        ?>
+                        } ?>
 
-                    </div>
-                </div>
-            </div>
-
-            <div id="vitrine" class="right">
-                <div class="titulo-e-butao">
-                    <h3>Produtos e Serviços</h3>
-                    <button onclick="adicionar()">
-                        <i class="fas fa-plus-circle"></i>
-                    </button>
-                </div>
-                <div class="main-two-ctwo">
-
-                    <?php foreach ($data_publicacao as $data) { ?>
-                        <div class="card">
-                            <div class="image">
-                                <img <?php echo "src='../resources/images/upload/publicacao/" . $data['fotoProdutoPublicacao'] . "'"; ?> alt="">
-                            </div>
-                            <div class="texts">
-                                <h3><?php echo $data['tituloPublicacao'] ?></h3>
-                                <p><?php echo $data['precoProdutoPublicacao'] ?></p>
-                                <p><?php echo $data['descricaoPublicacao'] ?></p>
-                            </div>
                         </div>
-                    <?php } ?>
-                </div>
-            </div>
-
-            <!-- VITRINE EXCLUSIVA -->
-
-            <div id="vitrineexclusiva" class="right">
-                <div class="titulo-e-butao">
-                    <h3>Vitrine Exclusiva</h3>
                 </div>
 
-                <div class="main-two-ctwo">
+                <!--VITRINE DESTINADA A PARCERIAS -->
+                <div class="vitrine_dois">
+                    <h3 class="title"><?php echo $data_empresa['nomeEmpresa']?> recomenda:</h3>
+                    <p class="subtitle">Visite empresas parceiras</p>
                     <?php
-                    if ($data_recomendacao == null) {
-                    } else {
-                        foreach ($data_publicacao2 as $data) { ?>
-                            <div class="card">
-                                <div class="image">
-                                    <img <?php echo "src='../resources/images/upload/publicacao/" . $data['fotoProdutoPublicacao'] . "'"; ?> alt="">
-                                </div>
-                                <div class="texts">
-                                    <h3><?php echo $data['tituloPublicacao'] ?></h3>
-                                    <p><?php echo $data['precoProdutoPublicacao'] ?></p>
-                                    <p><?php echo $data['descricaoPublicacao'] ?></p>
-                                </div>
+
+                    if (empty($data_recomendacao)) { ?>
+                        <div class="text_vitrine_dois">
+                            <h3>Esta área é destinada a divulgação de empresas parceiras.</h3>
+                            <p>Forme uma parceria! Isso será benéfico para ambas empresas.</p>
+                        </div>
+                    <?php } else { ?>
+
+                        <?php
+                        foreach ($data_recomendacao as $data) {
+                            $data_empresa = $empresa->readEmpresas($data['idEmpresaRecomendada']);
+                            $data_publicacao = $publicacao->readPublicacao2($data_empresa['idEmpresa']); ?>
+
+                            <div class="container_cards">
+                                <h3 class="title"><?php echo $data_empresa['nomeEmpresa'] ?></h3>
+                                <?php if (empty($data_publicacao)) {
+                                } else {
+                                    foreach ($data_publicacao as $data) { ?>
+
+                                        <a href="">
+                                            <div class="card">
+                                                <div class="img">
+                                                    <img src="../resources/images/upload/publicacao/<?php echo $data['fotoProdutoPublicacao']; ?>" alt="">
+                                                </div>
+                                                <div class="text">
+                                                    <h3><?php echo $data['tituloPublicacao'] ?></h3>
+                                                    <p class="desc"><?php echo $data['descricaoPublicacao'] ?></p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                <?php }
+                                } ?>
+
                             </div>
                     <?php }
                     } ?>
                 </div>
             </div>
+
         </div>
     </div>
 
     <script src="../resources/js/script.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+        function previewImagem(){
+
+            var imagem = document.querySelector('[name=arquivo]').files[0];
+            var preview = document.querySelector('#img')
+
+            var reader = new FileReader()
+
+            reader.onloadend = function(){
+                preview.src = reader.result;
+            }
+
+            if(imagem) {
+                reader.readAsDataURL(imagem)
+            }else{
+                preview.src = "";
+            }
+
+        }
     </script>
 </body>
 

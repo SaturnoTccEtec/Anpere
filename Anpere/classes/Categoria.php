@@ -2,8 +2,8 @@
 
 class Categoria
 {
-    private int $idcategoria;
-    private string $nomecategoria;
+    private $idcategoria;
+    private $nomecategoria;
 
 
     /* -------- MÉTODOS ---------- */

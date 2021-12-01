@@ -1,38 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2? family = Poppins: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 1,100; 1,200; 1,300; 1,400; 1.500; 1.600 & display = swap ');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-color: #f0f4ff;
 }
 
 .container {
-    display: grid;
-    width: 1000px;
-    height: 600px;
-    grid-template-columns: 500px 500px;
-    margin: auto;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 73%;
+    height: 44vw;
     background-color: #fff;
     box-shadow: 0 0.2rem 2rem #407dee23;
     border-radius: 2px;
+    overflow: hidden;
 }
 
-.proximo a{
-    float: right;
-    color: white;
-    margin-top: 0px;
-    text-decoration: none;
+.LadoEsquerdo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 1.2rem;
 }
 
-.proximo a:hover{
-    font-weight: bold;
-    transition: 0.2s;
+.LadoDireito {
+    display: flex;
+    width: 50%;
+    padding: 1.2rem;
+}
+
+.LadoEsquerdo .menuPasso {
+    display: flex;
+    margin: auto;
+    width: 95%;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 1.5rem;
 }
 
 
@@ -42,239 +60,203 @@ body {
 }
 
 .LadoEsquerdo .titulo {
-    font-size: 25px;
-    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-.LadoEsquerdo .subtitulo {
-    font-size: 15px;
-    margin-top: 20px;
+.LadoEsquerdo .titulo p {
+    font-size: 20px;
 }
 
-.LadoEsquerdo textarea {
-    width: 400px;
-    height: 110px;
-    border: none;
-    background-color: rgb(247, 247, 247);
-    font-size: 15px;
-    margin-top: 70px;
-    border-radius: 7px;
-    padding: 5px;
-    color: rgb(72, 7, 109);
+.LadoEsquerdo .conteudo .icones p {
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
 }
 
-.LadoEsquerdo textarea:focus {
-    box-shadow: none;
-    outline: none;
+.LadoEsquerdo .icones form {
+    display: grid;
+    margin-top: 2rem;
+    max-width: 600px;
+    gap: 20px;
+
+    grid-template-areas: "label label label label";
 }
 
-.LadoEsquerdo .conteudo {
-    padding: 40px;
-}
-
-.começar button {
-    background-color: white;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid black;
-    width: 200px;
-    height: 30px;
-    margin-top: 100px;
-    border-radius: 3px;
-    font-size: 15px;
-}
-
-.começar button:hover {
-    border-bottom: 2px solid black;
-}
-
-.LadoDireito .conteudo {
-    padding: 40px;
-}
-
-.LadoEsquerdo i {
-    float: left;
-    text-decoration: none;
-    color: rgb(53, 53, 53);
-}
-
-.LadoEsquerdo .menuPasso p {
-    float: right;
-    margin-top: -2px;
-}
-
-.LadoEsquerdo .icone {
+.LadoEsquerdo .label {
+    grid-area: "label";
     border-radius: 4px;
     width: 80px;
-    float: left;
-    margin-left: 10px;
+    cursor: pointer;
 }
 
-.LadoEsquerdo .icones {
-    margin-top: 30px;
-    height: 130px;
-    width: 500px;
-}
-
-.LadoEsquerdo .icones2 {
-    width: 500px;
-    height: 130px;
-}
-
-.LadoEsquerdo .icones3 {
+.icones .label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
     height: 120px;
-}
 
-.LadoEsquerdo .icones3 .outro {
-    margin-left: 16px;
-}
-
-.LadoEsquerdo .icone:hover img {
-    width: 45px;
-}
-
-.LadoEsquerdo .icone button {
-    background: none;
     border: none;
-    box-shadow: none;
+    outline: none;
+    background-color: #fff;
+
 }
 
-.LadoEsquerdo button:focus {
-    box-shadow: 0 0 0 0;
-    outline: 0;
+.icones .label:hover {
+    transition: 0.1s;
+    transform: scale(1.005);
+    box-shadow: 0px 2px 25px 2px rgba(0, 0, 0, 0.11);
 }
 
 .LadoDireito {
-    border-radius: 0px 2px 2px 0px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.LadoDireito form input {
-    width: 200px;
-    font-size: 20px;
+.LadoDireito .conteudo{
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LadoDireito .conteudo .proximo{
+    width: 95%;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.LadoDireito .conteudo .proximo button{
+    width: 100px;
+    height: 32px;
     border: none;
-    background: none;
-    color: rgb(216, 216, 216);
-    margin-left: 5px;
+    outline: none;
+    background-color: transparent;
+
+    font-size: 16px;
+    color: #fff;
 }
 
+.LadoDireito .conteudo .proximo button:hover{
+    font-size: 17px;
+    transition:0.1s;
+}
+
+.LadoDireito .conteudo form{
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo form .fotoPerfil{
+   display: flex;
+   width: 35%;
+   height: 160px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   
+}
+.conteudo form .fotoPerfil img{
+    width: 200%;
+    background-size: contain;
+}
+
+.conteudo .inf{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo .dois{
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conteudo .dois input{
+    outline: none;
+    background-color: transparent;
+    border: none;
+
+    height: 30px;
+    font-size: 17;
+    color: #fff;
+    font-weight: 400;
+
+    cursor: inherit;
+}
+
+.conteudo .inf .empresa{
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.conteudo .inf .cat{
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+}
 .icones3 .icone {
     float: left;
 }
 
-.LadoDireito .fotoPerfil {
-    margin: auto;
-    margin-top: 70px;
-
-    
+.btn-salvar-foto{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-
-.LadoDireito .fotoPerfil img {
-    transform: rotate(90deg);
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
+.btn-salvar-foto a{
+    width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.LadoDireito form input:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.LadoDireito form p {
-    float: left;
-    color: white;
-    font-size: 20px;
-}
-
-.titulo2 {
-    color: white;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-left: 200px;
-}
-
-.LadoDireito form {
-    margin-left: 80px;
-}
-
-.LadoDireito form button {
-    width: 80px;
-    margin-left: 220px;
-    margin-top: -30px;
-    height: 30px;
-    background: none;
-    color: white;
-    font-size: 15px;
-    border: none;
-}
-
-.fotoPerfil {
-    width: 150px;
-    height: 150px;
-    background-color: white;
-    border-radius: 100px;
-    margin-right: 30px;
-}
-
-.LadoDireito form i {
-    color: white;
-    float: right;
-}
-
-.LadoDireito form button:hover {
-    background: none;
-    color: white;
-    font-size: 17px;
-}
-
-.inf {
-    margin-top: 20px;
-    margin-left: 50px;
-}
-
-.LadoDireito .foto input[type="file"] {
-    display: none;
-}
-
-.LadoDireito .foto label {
-    border: 1px solid white;
-    color: white;
+.btn-salvar-foto button{
+    background-color: #fff;
+    width: 80%;
+    height: 40px;
+    margin:auto;
+    color: #000;
+    border-radius: 2px;
     padding: 5px;
-    margin-left: -10px;
-    border-radius: 1px;
-    transition: 0.2s;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.LadoDireito .foto label:hover {
-    background-color: white;
-    color: black;
-    transition: 0.2s;
+.btn-salvar-foto button:hover{
+    background-color: rgb(233, 233, 233);
 }
 
-.LadoDireito .foto {
-    margin-bottom: 40px;
-    margin-left: 80px;
-}
 
-.LadoDireito .opcao {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    margin: auto;
-    margin-top: 40px;
-}
-
-.LadoDireito .opcao img {
-    width: 150px;
-    margin-top: 20px;
-    margin-left: 25px;
-}
-
-.LadoEsquerdo .icone img {
+.LadoEsquerdo .icones img {
     width: 40px;
-    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -282,23 +264,7 @@ body {
 .LadoEsquerdo .icone p {
     font-size: 15px;
     font-weight: bold;
-    margin-left: 10px;
     margin-bottom: 10px;
-}
-
-.LadoDireito button {
-    width: 70px;
-    height: 30px;
-    background: none;
-    border: none;
-    font-size: 15px;
-    margin-top: 30px;
-    color: rgb(245, 245, 245);
-    cursor: pointer;
-}
-
-.LadoDireito button:hover {
-    color: white;
 }
 
 .LadoEsquerdo .icones3 select {
@@ -308,6 +274,7 @@ body {
     margin-left: 20px;
     font-size: 15px;
     display: none;
+    font-family: "Poppins";
 }
 
 .LadoEsquerdo .icones3 select:focus {
@@ -318,3 +285,78 @@ body {
 .imagem {
     margin: auto;
 }
+
+
+
+/** SELECT **/
+
+.other-category{
+    position: absolute;
+    display: none;
+    width: 250px;
+    box-shadow: 0px 0px 20px #f0f4ff;
+    flex-direction: column;
+    bottom: 14%;
+    left: 25%;
+}
+
+.other-category .dropdown-list{
+    background-color: #fff;
+    color: #000;
+    font-weight: 400;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s;
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 15px;
+    order: 1;
+}
+
+.dropdown-select{
+    background-color: #fff;
+    border-radius: 3px;
+    margin-bottom: 5px;
+
+    position: relative;
+    border: 0.5px solid #a0a0a0;
+
+    order: 0;
+}
+
+.other-category .dropdown-list.active{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.other-category .dropdown-list::-webkit-scrollbar{
+    width: 8px;
+    background-color: #c6d5fd;
+    border: 0px 2px 2px 0px;
+}
+
+
+.other-category .dropdown-list::-webkit-scrollbar-thumb{
+    width: 8px;
+    background-color: #abc0fa;
+    border: 0px 2px 2px 0px;
+}
+
+.other-category .dropdown-list_item, .dropdown-select{
+    padding: 6px 14px;
+    cursor: pointer;
+}
+
+.other-category .dropdown-list_item label{
+    width: 100%;
+    cursor: pointer;
+}
+
+.other-category .dropdown-list_item:hover{
+    background-color: #c6d5fd;
+}
+
+
+

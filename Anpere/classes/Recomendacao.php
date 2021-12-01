@@ -25,7 +25,7 @@ class Recomendacao{
         //AGORA VAMO PROCURAR A EMPRESA RECOMENDADA
         $querySelect_two = ("SELECT * FROM tbempresa WHERE idEmpresa = '$id'");
         $return = $conn->query($querySelect_two);
-        $return_two = $return->fetch(PDO::FETCH_BOTH);
+        $return_two = $return->fetch(PDO::FETCH_ASSOC);
 
         return $return_two;
     }

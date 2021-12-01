@@ -87,6 +87,8 @@ class Empresa{
         $queryInsert_2 = "INSERT INTO tbtelefoneempresa (idempresa, numtelefoneempresa)
                           VALUE ('$id', '".$empresa->getTelefoneempresa()."')";
         $conn->exec($queryInsert_2);
+
+        return $id;
     }
 
     public function listarEmpresasIndex(){
@@ -116,7 +118,7 @@ class Empresa{
     public function listarEmpresasParceria(){
         $conn = Connection::GET_PDO();
         //ADD consulta numa variável
-        $querySelect = "SELECT * FROM tbempresa WHERE disponibilidade = 0";
+        $querySelect = "SELECT * FROM tbempresa WHERE disponibilidade = 0 ORDER BY idEmpresa DESC";
         //Fazendo a consulta
         $resultado = $conn->query($querySelect);
         //Retornando um array

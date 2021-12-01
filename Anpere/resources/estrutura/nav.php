@@ -26,12 +26,12 @@ NESSE ARQUIVO ESTÁ SENDO VERIFICADO O NIVEL DE ACESSO DO LOGIN PARA ASSIM APRES
                 <header>
 
                     <div class="logo">
-                        <img src="../resources/images/LogoAnpere.png" alt="Logo Anpere">
+                        <img src="../resources/images/LogoComNome.png" alt="Logo Anpere">
                     </div>
 
                     <div class="itens">
                         <ul>
-                        <li><a style="color: #407cee" href="#">Olá, Adm</a></li>
+                            <li><a style="color: #407cee" href="#">Olá, Adm</a></li>
                             <li><a href="../../../Anpere/AreaRestrita-Cliente/indexAreaRestrita.php">Cliente</a></li>
                             <li><a href="../../../Anpere/AreaRestrita-Empresa/indexAreaRestrita.php">Empresa</a></li>
                             <li><a class="empresa" href="../../../Anpere/AreaRestrita-adm/indexAreaRestrita.php">Administrador</a></li>
@@ -45,7 +45,7 @@ NESSE ARQUIVO ESTÁ SENDO VERIFICADO O NIVEL DE ACESSO DO LOGIN PARA ASSIM APRES
                 <header>
 
                     <div class="logo">
-                        <img src="../resources/images/LogoAnpere.png" alt="Logo Anpere">
+                        <img src="../resources/images/LogoComNome.png" alt="Logo Anpere">
                     </div>
 
                     <div class="itens">
@@ -62,14 +62,18 @@ NESSE ARQUIVO ESTÁ SENDO VERIFICADO O NIVEL DE ACESSO DO LOGIN PARA ASSIM APRES
                 <header>
 
                     <div class="logo">
-                        <img src="../resources/images/LogoAnpere.png" alt="Logo Anpere">
+                        <img src="../resources/images/LogoComNome.png" alt="Logo Anpere">
                     </div>
 
                     <div class="itens">
+                        <?php $empresa = new Empresa();
+                        $nome = $empresa->readEmpresas($_SESSION['idEmpresa']) ?>
                         <ul>
-                            <li><a href="perfilAreaRestrita.php?id=<?php echo ($_SESSION['idEmpresa']);?>">Olá, Empresa</a></li>
-                            <li><a href="../Session/destruirSessao.php?pagina=index.php">Log out</a></li>
+                            <li><a class="item-1" href="indexAreaRestrita.php">Olá, <?php echo $nome['nomeEmpresa'] ?> </a></li>
                             <li><a class="empresa" href="perfilAreaRestrita.php">Perfil</a></li>
+                            <li><a class="item-3" href="../Session/destruirSessao.php?pagina=index.php">
+                                    <p><i class="fas fa-power-off" _mstvisible="2"></i> Log out</p>
+                                </a></li>
                         </ul>
                     </div>
                 </header>

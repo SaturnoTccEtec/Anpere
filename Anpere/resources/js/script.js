@@ -1,8 +1,15 @@
 var div_about = document.querySelector('#text-about');
 var popup = document.querySelector('#popup');
+var popup3 = document.querySelector('.popup3');
+var chat = document.querySelector('.wrapper');
 
 var vitrineexc = document.querySelector('#vitrineexclusiva');
 var vitrine = document.querySelector('#vitrine');
+
+let bt_perfil = document.querySelector('#btn-salvar');
+
+let selectbox = document.querySelector('.other-category');
+
 
 function esconder_mostrar() {
   if (div_about.style.display === "none") {
@@ -12,9 +19,24 @@ function esconder_mostrar() {
   }
 }
 
+ function esconder() {
+  bt_perfil.style.display = "none";
+  bt_perfil.style.visibility = "hidden";
+}
+
 function adicionar() {
   popup.style.display = "grid";
   popup.style.visibility = "visible";
+  var x = window.scrollX;
+  var y = window.scrollY;
+  window.onscroll = function () {
+    window.scrollTo(x, y);
+  }
+}
+
+function adicionar2() {
+  popup3.style.display = "grid";
+  popup3.style.visibility = "visible";
   var x = window.scrollX;
   var y = window.scrollY;
   window.onscroll = function () {
@@ -53,4 +75,10 @@ function fechar2() {
 function abrir() {
   popup2.style.display = "grid";
   popup2.style.visibility = "visible";
+}
+
+
+function abrirselect() {
+  selectbox.style.display = "flex";
+  selectbox.style.visibility = "visible";
 }

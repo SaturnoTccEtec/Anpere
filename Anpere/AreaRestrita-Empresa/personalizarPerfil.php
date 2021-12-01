@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../resources/css/personalizarPerfil.css">
-    <title>Personalizar perfil</title>
+    <link href="../resources/images/LogoAnpere.png" rel="icon">
+    <title>Perfil - Personalizar</title>
 </head>
 
 <body>
 
     <?php
 
-    require_once ('../global_two.php');
+    require_once('../global_two.php');
     $idEmpresa = $_GET["id"];
+
     $pdo = Connection::GET_PDO();
 
     $sql = "SELECT * FROM tbperfilempresa WHERE idEmpresa='$idEmpresa'";
@@ -41,130 +44,190 @@
     ?>
 
 
+    <?php
+
+
+
+
+    ?>
+
     <div class="container">
+
         <div class="LadoEsquerdo">
+
             <div class="conteudo">
                 <div class="menuPasso">
-                    <a href="abertura.html"><i class="fas fa-arrow-left"></i></a>
-                    <p> Passo 1 de 2 </p>
+                    <p>Passo 1 de 2</p>
                 </div>
-                <p class="titulo"> Qual o setor que sua empresa atua? </p>
+                <div class="titulo">
+                    <p>Em qual setor sua empresa atua? </p>
+                </div>
+
+
                 <div class="icones">
-                    <div class="icone">
-                        <button onclick="Icone1()">
-                            <img src="../resources/images/bola-de-basquete.png">
-                            <input id="icone1" name="icone1" type="hidden" value="13">
+
+                    <form method="POST" action="cadastrarCategoria.php?id=<?php echo $idEmpresa ?>">
+
+                        <label class="label" for="icone_1">
+                            <img src="../resources/images/bola-de-basquete.png" alt="categoria-esporte-fitness">
                             <p>Esportes & fitness</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="13" id="icone_1" name="icone" style="display: none;">
+                        </label>
 
-                    <div class="icone">
-                        <button onclick="Icone2()">
-                            <img src="../resources/images/camiseta-branca-de-manga-curta.png">
-                            <input id="icone2" name="icone2" type="hidden" value="9">
+                        <label class="label" for="icone_2">
+                            <img src="../resources/images/camiseta-branca-de-manga-curta.png" alt="categoria-moda-acessorios">
                             <p>Moda & acessórios</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="9" id="icone_2" name="icone" style="display: none;">
+                        </label>
 
-                    <div class="icone">
-                        <button onclick="Icone3()">
-                            <img src="../resources/images/chave-inglesa.png">
-                            <input id="icone3" name="icone3" type="hidden" value="2">
+                        <label class="label" for="icone_3">
+                            <img src="../resources/images/chave-inglesa.png" alt="categoria-assistencia-tecnica">
                             <p>Assistência técnica</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="2" id="icone_3" name="icone" style="display: none;">
+                        </label>
 
-                    <div class="icone">
-                        <button onclick="Icone4()">
-                            <img src="../resources/images/fogao-eletrico.png">
-                            <input id="icone4" name="icone4" type="hidden" value="11">
+                        <label class="label" for="icone_4">
+                            <img src="../resources/images/fogao-eletrico.png" alt="categoria-eletrodomesticos">
                             <p>Utensílios domésticos</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="11" id="icone_4" name="icone" style="display: none;">
+                        </label>
 
-                </div>
-
-                <div class="icones2">
-
-
-                    <div class="icone" data-toggle="modal" data-target="MyModal" iddadiv="1">
-                        <button onclick="Icone5()">
-                            <img src="../resources/images/maquiagem.png">
-                            <input id="icone5" name="icone5" type="hidden" value="7">
+                        <label class="label" for="icone_5">
+                            <img src="../resources/images/maquiagem.png" alt="categoria-beelza-cuidadopessoal">
                             <p>Beleza & cuidados</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="7" id="icone_5" name="icone" style="display: none;">
+                        </label>
 
-                    <div class="icone">
-                        <button onclick="Icone6()">
-                            <img src="../resources/images/smartphone.png">
-                            <input id="icone6" name="icone6" type="hidden" value="15">
+                        <label class="label" for="icone_6">
+                            <img src="../resources/images/smartphone.png" alt="categoria-celular-ti">
                             <p>Celulares & TI</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="15" id="icone_6" name="icone" style="display: none;">
+                        </label>
 
-
-                    <div class="icone">
-                        <button onclick="Icone7()">
-                            <img src="../resources/images/sofa.png">
-                            <input id="icone7" name="icone7" type="hidden" value="10">
+                        <label class="label" for="icone_7">
+                            <img src="../resources/images/sofa.png" alt="moveis-decoracao">
                             <p>Móveis & decoração</p>
-                        </button>
-                    </div>
+                            <input type="submit" value="10" id="icone_7" name="icone" style="display: none;">
+                        </label>
 
-                    <div class="icone">
-                        <button onclick="Icone8()">
-                            <img src="../resources/images/urso-teddy.png">
-                            <input id="icone8" name="icone8" type="hidden" value="6">
+                        <label class="label" for="icone_8">
+                            <img src="../resources/images/urso-teddy.png" alt="bebes-infantil">
                             <p>Bebes & infantil</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="icones3">
-                    <div class="icone">
+                            <input type="submit" name="icone" value="6" id="icone_8" style="display: none;">
+                        </label>
 
-                        <button onclick="Icone9()">
-                            <img src="../resources/images/outros.png">
-                            <input id="icone9" name="icone9" type="hidden" value="Outro">
-                            <p class="outro">Outro</p>
-                        </button>
-                    </div> <select id="cars" name="teste">
-                        <option>Selecionar</option>
-                        <option id="auto" value="1">Auto & Peças</option>
-                        <option value="3">Alimentos</option>
-                        <option value="4">Animais</option>
-                        <option value="5">Arte, Papelaria e Armarinho</option>
-                        <option value="8">Brinquedos</option>
-                        <option value="12">Eletrônicos</option>
-                        <option value="14">Festas</option>
-                        <option value="16">Instrumentos & Musica</option>
-                        <option value="17">Joalheirias & Bijuterias</option>
-                        <option value="18">Saúde</option>
-                        <option value="19">Bebidas</option>
-                    </select>
+                        <label onclick="abrirselect()" class="label">
+                            <img src="../resources/images/outros.png" alt="">
+                            <p>Outros</p>
+                            <input type="btn" value="6" id="icone_9" style="display: none;">
+                        </label>
+
+                        <label class="other-category">
+                            <div class="dropdown-select">
+                                <label class="select">Selecione a categoria</label>
+                                <i class="fa fa-caret-down icon"></i>
+                            </div>
+                            <div class="dropdown-list">
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_10">Auto & Peças</label>
+                                    <input type="submit" name="icone" value="1" id="icone_10" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_11">Alimentos</label>
+                                    <input type="submit" name="icone" value="3" id="icone_11" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_12">Animais</label>
+                                    <input type="submit" name="icone" value="4" id="icone_12" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_13">Arte, Papelaria & Armarinho</label>
+                                    <input type="submit" name="icone" value="5" id="icone_13" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_14">Brinquedos</label>
+                                    <input type="submit" name="icone" value="8" id="icone_14" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_15">Eletrônicos</label>
+                                    <input type="submit" name="icone" value="12" id="icone_15" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_16">Festas</label>
+                                    <input type="submit" name="icone" value="14" id="icone_16" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_17">Instrumentos & Música</label>
+                                    <input type="submit" name="icone" value="16" id="icone_17" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_18">Joalherias & Bijuterias</label>
+                                    <input type="submit" name="icone" value="17" id="icone_18" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_19">Saúde</label>
+                                    <input type="submit" name="icone" value="18" id="icone_19" style="display: none;">
+                                </div>
+
+                                <div class="dropdown-list_item">
+                                    <label for="icone_20">Bebidas</label>
+                                    <input type="submit" name="icone" value="19" id="icone_20" style="display: none;">
+                                </div>
+
+                            </div>
+
+                        </label>
+
+                    </form>
+
                 </div>
+
             </div>
+
         </div>
+
         <div class="LadoDireito">
             <div class="conteudo">
+                <?php
 
-                <?php $idEmpresa = $_GET["id"]; ?>
+                $empresa = new Empresa();
+                $data_empresa = $empresa->readEmpresas($idEmpresa);
 
-                <form method="POST" action="cadastrarCategoria.php?id=<?php echo $idEmpresa ?>">
-                    <div class="proximo">
-                        <i class="fas fa-arrow-right"></i>
-                        <button onclick="Carregar()">Próximo</button>
+                $categoria = new Categoria();
+
+
+                if ($data_empresa['idCategoria'] === 20) {
+                    $categoria = "Nenhuma categoria selecionada";
+                } else {
+                    $data_cat = $categoria->listarCategoriaEsp($data_empresa['idCategoria']);
+                    $categoria = $data_cat['nomeCategoria'];
+                }
+
+                ?>
+
+                <div class="fotoPerfil"><img src="../resources/images/perfil.png"></div>
+
+                <div class="inf">
+                    <p class="p empresa"><?php echo $data_empresa['nomeEmpresa'] ?></p>
+
+                    <div class="inf dois">
+                        <p class="p cat"><i class="fas fa-tags"></i> Setor: <?php echo $categoria; ?> </p>
                     </div>
-                    <div class="fotoPerfil"><img src="../resources/images/upload/perfilEmpresa/perfil.jpg"></div>
-                    <div class="inf">
-                        <p> Nome da empresa: </p>
-                        <br> <br>
+                </div>
 
-                        <p> Categoria: </p>
-                        <input id="selecionada" name="selecionada" type="text" readonly="readonly" value="indefinida">
-                        <br>
-                    </div>
-                </form>
+                <div class="btn-salvar-foto">
+                    <a href="personalizarPerfil2.php?id=<?php echo $idEmpresa ?>"><button id="btn-salvar">Salvar e seguir</button></a>
+                </div>
 
             </div>
 
@@ -172,62 +235,16 @@
 
     </div>
 
+    <script src="../resources/js/script.js"></script>
+    <script src="../resources/js/select.js"></script>
+
     <script>
-        function Icone1() {
-            var id = document.getElementById("icone1").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone2() {
-            var id = document.getElementById("icone2").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone3() {
-            var id = document.getElementById("icone3").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone4() {
-            var id = document.getElementById("icone4").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone5() {
-            var id = document.getElementById("icone5").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone6() {
-            var id = document.getElementById("icone6").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone7() {
-            var id = document.getElementById("icone7").value;
-            document.getElementById('selecionada').value = id;
-        }
-
-        function Icone8() {
-            var id = document.getElementById("icone8").value;
-            document.getElementById('selecionada').value = id;
-        }
-
         function Icone9() {
             var id = document.getElementById("icone9").value;
             var input = document.getElementById('cars');
             input.style.display = 'unset';
             input.style.width = '240px';
             input.style.height = '30px';
-        }
-
-        function Carregar() {
-
-            var select = document.getElementById('cars');
-            var value = select.options[select.selectedIndex].value;
-            if (value != "Selecionar") {
-                document.getElementById('selecionada').value = value;
-            }
         }
     </script>
 

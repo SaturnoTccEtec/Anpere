@@ -12,13 +12,14 @@ include("../classes/Connection.php");
 
 $pdo = CONNECTION::GET_PDO();
 
-
     //echo $descricaoPublicacao;
-
     try{
 
         $stmt = $pdo->prepare("insert into tbrecomendacao values (null,'$idEmpresa','$idRemetente')");
         $stmt ->execute();
+
+        $stmt3 = $pdo->prepare("insert into tbrecomendacao values (null,'$idRemetente','$idEmpresa')");
+        $stmt3 ->execute();
 
         $stmt2 = $pdo->prepare("delete from tbsolicitacaoparceria WHERE idRemetente='$idRemetente'");
         $stmt2 ->execute();

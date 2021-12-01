@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
-  <title>Anpere - entre ou cadastre-se</title>
-  <link href="resources/images/LogoAnpere.png" rel="icon">
+  <title>Anpere - Entre</title>
+  <link href="resources/images/LogoAnpere3.png" rel="icon">
   <link rel="stylesheet" href="resources/css/login.css" media="screen">
   <!-- Importando as fonts -->
 

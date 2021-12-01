@@ -37,6 +37,7 @@ $pdo = CONNECTION::GET_PDO();
         if($login!=null and $login!=""){
         $idLogin = (int)$login;
         $_SESSION['idCliente'] = $idLogin;
+        $_SESSION['cpf_unique'] = $cpfBanco;
         }
         header("Location: ../AreaRestrita-Cliente/indexAreaRestrita.php");
     }

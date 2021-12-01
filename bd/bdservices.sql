@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Nov-2021 às 16:08
+-- Tempo de geração: 02-Dez-2021 às 00:04
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 8.0.9
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bdservices`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `messages`
+--
+
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL,
+  `incoming_msg_id` varchar(500) NOT NULL,
+  `outgoing_msg_id` varchar(500) NOT NULL,
+  `msg` varchar(1000) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -69,7 +82,8 @@ INSERT INTO `tbcategoria` (`idCategoria`, `nomeCategoria`) VALUES
 (16, 'Instrumentos & Musica'),
 (17, 'Joalheirias & Bijuterias'),
 (18, 'Saúde'),
-(19, 'Bebidas');
+(19, 'Bebidas'),
+(20, 'Nenhuma categoria selecionada');
 
 -- --------------------------------------------------------
 
@@ -185,7 +199,8 @@ INSERT INTO `tbempresa` (`idEmpresa`, `nomeEmpresa`, `emailEmpresa`, `senhaEmpre
 (48, 'Droga Bem', 'DrogaBem@gmail.com', '123456', '72501730000187', 'Gravaçu', 456, '08461130', 'Guaianases', 'São Paulo', 'São Paulo', 0, 0, 18),
 (49, 'Farma Cura', 'FarmaCura@gmail.com', '123456', '87461628000172', 'Barbosa Calheiros', 987, '08460000', 'Guaianases', 'São Paulo', 'São Paulo', 0, 0, 18),
 (50, 'Barrilada', 'Barrilada@gmail.com', '123456', '70893888000114', 'Cardoso de Abreu', 234, '08460160', 'Guaianases', 'São Paulo', 'São Paulo', 0, 0, 19),
-(51, 'Paris Adega', 'ParisAdega@gmail.com', '123456', '29628747000170', 'Oito', 567, '08460530', 'Guaianases', 'São Paulo', 'São Paulo', 0, 0, 19);
+(51, 'Paris Adega', 'ParisAdega@gmail.com', '123456', '29628747000170', 'Oito', 567, '08460530', 'Guaianases', 'São Paulo', 'São Paulo', 0, 0, 19),
+(67, 'JP Tecnologias', 'jptecnologias@gmail.com', '123456', '59416151000178', 'Rua Feliciano de Mendonça', 80, '08460365', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP', 0, 0, 15);
 
 -- --------------------------------------------------------
 
@@ -206,8 +221,8 @@ INSERT INTO `tbempresaparceria` (`idEmpresaParceria`, `idEmpresa`) VALUES
 (6, 14),
 (7, 14),
 (8, 19),
-(9, 19),
-(10, 19);
+(12, 43),
+(13, 43);
 
 -- --------------------------------------------------------
 
@@ -228,7 +243,8 @@ CREATE TABLE `tbparceria` (
 
 INSERT INTO `tbparceria` (`idParceria`, `idEmpresa`, `idEmpresaParceria`, `dataParceria`) VALUES
 (13, 17, 6, '17/10/2021'),
-(14, 18, 7, '17/10/2021');
+(14, 18, 7, '17/10/2021'),
+(20, 67, 13, '01/12/2021');
 
 -- --------------------------------------------------------
 
@@ -285,7 +301,8 @@ INSERT INTO `tbperfilempresa` (`idPerfilEmpresa`, `idEmpresa`, `fotoPerfilEmpres
 (41, 16, '6168c311c90f6.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, euismod non neque nec, interdum tincidunt odio. Ut cursus luctus elit in pulvinar.'),
 (42, 17, '6168c32322397.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, euismod non neque nec, interdum tincidunt odio. Ut cursus luctus elit in pulvinar.'),
 (43, 18, '6168c35625fa0.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, euismod non neque nec, interdum tincidunt odio. Ut cursus luctus elit in pulvinar.'),
-(44, 19, '6168c37bb500e.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, euismod non neque nec, interdum tincidunt odio. Ut cursus luctus elit in pulvinar.');
+(44, 19, '6168c37bb500e.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ex dui, euismod non neque nec, interdum tincidunt odio. Ut cursus luctus elit in pulvinar.'),
+(56, 67, '943b8663e4b5439fdd87b43c89035cb7.jpg', '  Somos uma empresa de produtos tecnológicos. Atuamos no mercado desde 2010.');
 
 -- --------------------------------------------------------
 
@@ -345,7 +362,10 @@ INSERT INTO `tbpublicacao` (`idPublicacao`, `tituloPublicacao`, `fotoProdutoPubl
 (68, 'Bolsas Arietto', '6192d4f1e1239.jpg', '1000.00', ' Bolsas Arietto | Preços podem variar', NULL, 46, '3'),
 (69, 'Pulseiras femininas', '6192d55c4e7d4.jpg', '50.00', ' Pulseiras delicadas folheadas a ouro', NULL, 47, '3'),
 (70, 'Tonalizantes Keraton', '6192d59c710c0.jpg', '30.00', ' Tonalizantes Keraton | Diversas cores', NULL, 48, '3'),
-(71, 'Buscofem', '6192d5ff5ae25.jpg', '30.00', 'Buscofem | Ibuprofeno | Com/Sem receita', NULL, 49, '3');
+(71, 'Buscofem', '6192d5ff5ae25.jpg', '30.00', 'Buscofem | Ibuprofeno | Com/Sem receita', NULL, 49, '3'),
+(76, 'Monitor Dell', '61a7a8752aeda.jpg', '840.00', ' Monitor Dell preto | 100V/240V', NULL, 67, '3'),
+(77, 'Headset FORTREK', '61a7a89e84875.jpg', '200.00', ' Headset FORTREK com microfone', NULL, 67, '3'),
+(78, 'Cadeira Gamer', '61a7a8b8d4d12.jpg', '900.00', ' Cadeira Gamer preta e vermelha | Inclinável', NULL, 67, '3');
 
 -- --------------------------------------------------------
 
@@ -367,7 +387,8 @@ INSERT INTO `tbrecomendacao` (`idRecomendacao`, `idEmpresa`, `idEmpresaRecomenda
 (5, 14, 17),
 (6, 14, 18),
 (7, 19, 50),
-(8, 19, 16);
+(14, 43, 67),
+(15, 67, 43);
 
 -- --------------------------------------------------------
 
@@ -387,9 +408,11 @@ CREATE TABLE `tbsolicitacaoparceria` (
 --
 
 INSERT INTO `tbsolicitacaoparceria` (`idSolicitacaoParceria`, `descricao`, `idRemetente`, `idDestinatario`) VALUES
-(18, 'Minha empresa é muito legal e voce deveria conhecer ela e afins', 19, 14),
 (19, '', 14, 15),
-(20, '', 14, 15);
+(20, '', 14, 15),
+(28, '', 14, 15),
+(29, '', 14, 15),
+(30, '', 14, 15);
 
 -- --------------------------------------------------------
 
@@ -426,11 +449,42 @@ INSERT INTO `tbtelefoneempresa` (`idTelefoneEmpresa`, `idEmpresa`, `numTelefoneE
 (11, 58, '01122445566'),
 (12, 59, '01122445566'),
 (13, 60, '01146757934'),
-(14, 61, '01146757934');
+(14, 61, '01146757934'),
+(16, 66, '11977665544'),
+(17, 67, '11977665544');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `unique_id` varchar(500) NOT NULL,
+  `name_enterprise` varchar(500) NOT NULL,
+  `status` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`user_id`, `unique_id`, `name_enterprise`, `status`) VALUES
+(1, '00222268000178', 'Atacadão do Veículo', 'Offline'),
+(2, '13812638000179', 'Tem Tudo Autopeças', 'Offline'),
+(3, '16214321000129', 'Reparo Rápido', 'Offline'),
+(4, '38948786000146', 'SmartTech', 'Offline');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- Índices para tabela `tbavaliacao`
@@ -527,8 +581,20 @@ ALTER TABLE `tbtelefoneempresa`
   ADD KEY `FK__tbempresa` (`idEmpresa`);
 
 --
+-- Índices para tabela `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbavaliacao`
@@ -540,7 +606,7 @@ ALTER TABLE `tbavaliacao`
 -- AUTO_INCREMENT de tabela `tbcategoria`
 --
 ALTER TABLE `tbcategoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoriaempresa`
@@ -558,43 +624,43 @@ ALTER TABLE `tbcliente`
 -- AUTO_INCREMENT de tabela `tbempresa`
 --
 ALTER TABLE `tbempresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT de tabela `tbempresaparceria`
 --
 ALTER TABLE `tbempresaparceria`
-  MODIFY `idEmpresaParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idEmpresaParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tbparceria`
 --
 ALTER TABLE `tbparceria`
-  MODIFY `idParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tbperfilempresa`
 --
 ALTER TABLE `tbperfilempresa`
-  MODIFY `idPerfilEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `idPerfilEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de tabela `tbpublicacao`
 --
 ALTER TABLE `tbpublicacao`
-  MODIFY `idPublicacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `idPublicacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de tabela `tbrecomendacao`
 --
 ALTER TABLE `tbrecomendacao`
-  MODIFY `idRecomendacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idRecomendacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tbsolicitacaoparceria`
 --
 ALTER TABLE `tbsolicitacaoparceria`
-  MODIFY `idSolicitacaoParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idSolicitacaoParceria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `tbtelefonecliente`
@@ -606,7 +672,13 @@ ALTER TABLE `tbtelefonecliente`
 -- AUTO_INCREMENT de tabela `tbtelefoneempresa`
 --
 ALTER TABLE `tbtelefoneempresa`
-  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de tabela `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
