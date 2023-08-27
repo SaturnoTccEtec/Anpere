@@ -739,7 +739,9 @@ ALTER TABLE `tbrecomendacao`
   ADD CONSTRAINT `tbrecomendacao_ibfk_1` FOREIGN KEY (`idEmpresa`) REFERENCES `tbempresa` (`idEmpresa`);
 COMMIT;
 
---Made by gustavo.melo.fn
+--
+--Made by GustavoMeloFn
+--
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
